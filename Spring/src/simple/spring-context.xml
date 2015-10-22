@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Simple bean creation -->
+<bean id="Intel" class="simple.CPU">
+<property name="name" value="Pentium"></property>
+</bean>
+
+<!-- Simple value constructor injection -->
+<bean id="Nvidia" class="simple.CPU">
+<constructor-arg name="name" value="Tegra3"></constructor-arg>
+</bean>
+
+<!-- Init and destroy -->
+<bean id="Mediatek" class="simple.CPU" init-method="init" destroy-method="destroy">
+<constructor-arg name="name" value="MediatekTTTT"></constructor-arg>
+</bean>
+
+<!-- Simple properties injection -->
+<bean id="AMD" class="simple.CPU" scope="prototype">
+<property name="name" value="APU"></property>
+</bean>
+
+<bean id="Computer1" class="simple.Computer">
+<property name="cpu" ref="Intel"></property>
+</bean>
+
+<bean id="Computer2" class="simple.Computer">
+<property name="cpu">
+<bean class="simple.CPU" id="Qualcomm">
+<property name="name" value="Snapdragon"></property>
+</bean>
+</property>
+</bean>
+
+<!-- Simple bean creation -->
+<bean id="cpu" class="simple.CPU">
+<property name="name" value="Tegra4"></property>
+</bean>
+
+<!-- Constructor dependency injection -->
+<bean id="Computer3" class="simple.Computer" autowire="byName">
+</bean>
+</beans>
