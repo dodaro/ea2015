@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- SpringOperator Beans -->
+	<bean id="Sum" class="springCalculator.SpringOperator">
+		<property name="operator" value="+"></property>
+	</bean>
+
+	<bean id="Subtract" class="springCalculator.SpringOperator">
+		<property name="operator" value="-"></property>
+	</bean>
+
+	<bean id="Multiply" class="springCalculator.SpringOperator">
+		<property name="operator" value="*"></property>
+	</bean>
+
+	<bean id="Divide" class="springCalculator.SpringOperator">
+		<property name="operator" value="/"></property>
+	</bean>
+
+	<!-- SpringCalculator Beans -->
+	<bean id="Calculator1" class="springCalculator.SpringCalculator">
+		<property name="operator">
+			<bean class="springCalculator.SpringOperator" id="Power">
+				<property name="operator" value="^"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="Calculator2" class="springCalculator.SpringCalculator">
+		<property name="operator" ref="Divide"></property>
+	</bean>
+
+	<bean id="Calculator3" class="springCalculator.SpringCalculator">
+		<property name="operator" ref="Sum"></property>
+	</bean>
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Lesson3"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-context-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/aspectjlib-1.6.2.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/aspectjrt-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/aspectjtools-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/aspectjweaver-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-aop-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-aspects-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-beans-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-context-support-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-core-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-expression-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-instrument-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-instrument-tomcat-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-jdbc-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-jms-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-messaging-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-orm-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-oxm-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-test-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-tx-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-web-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-webmvc-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-webmvc-portlet-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lesson3/libs/spring-websocket-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

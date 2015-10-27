@@ -32,8 +32,8 @@ public class Main {
 		Computer comp3 = ap.getBean("Computer3", Computer.class);
 		comp3.print();
 
-//		Computer comp4 = ap.getBean("ComputerAnnotation", Computer.class);
-//		comp4.print();
+		Computer comp4 = ap.getBean("Computer4", Computer.class);
+		comp4.print();
 		ap.close();
 	}
 }

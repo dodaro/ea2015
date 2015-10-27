@@ -19,6 +19,7 @@ public class Computer {
 	}
 	
 	public void print() {
+		System.out.print("Computer CPU: ");
 		cpu.print();
 	}
 }
