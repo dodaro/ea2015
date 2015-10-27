@@ -10,7 +10,7 @@
 	<bean id="calculator" class="aspects.Calculator">
 	
 	</bean>
-	//TODO: non riesco a matchare il metodo "doSum"
+	
 	<bean id="logging" class="aspects.Logging"></bean>
 	<aop:config>
 		<aop:aspect id="aspect1" ref="logging">
