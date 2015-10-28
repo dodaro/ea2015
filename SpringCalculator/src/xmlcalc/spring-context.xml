@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="sum" class="xmlcalc.Operation">
+		<constructor-arg name="a" value="4"></constructor-arg>
+		<constructor-arg name="b" value="4"></constructor-arg>
+		<constructor-arg name="op" value="SUM"></constructor-arg>
+	</bean>
+
+	<bean id="subtract" class="xmlcalc.Operation">
+		<constructor-arg name="a" value="2"></constructor-arg>
+		<constructor-arg name="b" value="4"></constructor-arg>
+		<constructor-arg name="op" value="SUBTRACTION"></constructor-arg>
+	</bean>
+
+	<bean id="multiply" class="xmlcalc.Operation">
+		<constructor-arg name="a" value="3"></constructor-arg>
+		<constructor-arg name="b" value="1.5"></constructor-arg>
+		<constructor-arg name="op" value="MULTIPLICATION"></constructor-arg>
+	</bean>
+
+	<bean id="divide" class="xmlcalc.Operation">
+		<constructor-arg name="a" value="6"></constructor-arg>
+		<constructor-arg name="b" value="10"></constructor-arg>
+		<constructor-arg name="op" value="DIVISION"></constructor-arg>
+	</bean>
+
+	<bean id="Calc1" class="xmlcalc.Calculator">
+		<property name="op" ref="divide"></property>
+	</bean>
+
+	<bean id="Calc2" class="xmlcalc.Calculator">
+		<property name="op" ref="subtract"></property>
+	</bean>
+
+	<bean id="Calc3" class="xmlcalc.Calculator">
+		<constructor-arg name="o" ref="multiply"></constructor-arg>
+	</bean>
+
+	<bean id="Calc4" class="xmlcalc.Calculator">
+		<constructor-arg name="o" ref="sum"></constructor-arg>
+	</bean>
+
+	<bean id="Calc5" class="xmlcalc.Calculator">
+		<property name="op">
+			<bean id="sum2" class="xmlcalc.Operation">
+				<property name="n1" value="5"></property>
+				<property name="n2" value="4"></property>
+				<property name="o" value="SUM"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="op" class="xmlcalc.Operation">
+		<constructor-arg name="a" value="2"></constructor-arg>
+		<constructor-arg name="b" value="19"></constructor-arg>
+		<constructor-arg name="op" value="SUM"></constructor-arg>
+	</bean>
+
+	<bean id="Calc6" class="xmlcalc.Calculator" autowire="byName"></bean>
+
+	<bean id="logging" class="xmlcalc.Calculator" />
+	<aop:config>
+		<aop:aspect id="aspect1" ref="logging">
+			<aop:before method="beforeCalc"
+				pointcut="execution(public void performCalculation())" />
+			<aop:before method="beforePrint" 
+				pointcut="execution(public void pri*())" />
+			<aop:after method="afterCalc" 
+				pointcut="execution(public void performCalculation())" />
+			<aop:after method="afterPrint" 
+				pointcut="execution(public void pri*())" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
