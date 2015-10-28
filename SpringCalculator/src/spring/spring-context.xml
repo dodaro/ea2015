@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Num1" class="spring.Number">
+		<constructor-arg name="value" value="3" type="double"></constructor-arg>
+	</bean>
+
+	<bean id="Num2" class="spring.Number">
+		<constructor-arg name="value" value="5" type="double"></constructor-arg>
+	</bean>
+
+	<bean id="OpSUM" class="spring.Operator" factory-method="valueOf">
+		<constructor-arg>
+			<value>SUM</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="OpSUB" class="spring.Operator" factory-method="valueOf">
+		<constructor-arg>
+			<value>SUBTRACTION</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="OpDIV" class="spring.Operator" factory-method="valueOf">
+		<constructor-arg>
+			<value>DIVISION</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="OpMUL" class="spring.Operator" factory-method="valueOf">
+		<constructor-arg>
+			<value>MULTIPLICATION</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="Op1" class="spring.Operation">
+		<constructor-arg name="a" ref="Num1"></constructor-arg>
+		<constructor-arg name="b" ref="Num2"></constructor-arg>
+		<constructor-arg name="operator" ref="OpSUM"></constructor-arg>
+	</bean>
+
+	<bean id="Calc1" class="spring.Calculator">
+		<property name="operation" ref="Op1"></property>
+	</bean>
+
+	<bean id="Op2" class="spring.Operation">
+		<constructor-arg name="a" ref="Num1"></constructor-arg>
+		<constructor-arg name="b" ref="Num2"></constructor-arg>
+		<constructor-arg name="operator" ref="OpSUB"></constructor-arg>
+	</bean>
+
+	<bean id="Calc2" class="spring.Calculator">
+		<property name="operation" ref="Op2"></property>
+	</bean>
+
+	<bean id="Op3" class="spring.Operation">
+		<constructor-arg name="a" ref="Num1"></constructor-arg>
+		<constructor-arg name="b" ref="Num2"></constructor-arg>
+		<constructor-arg name="operator" ref="OpDIV"></constructor-arg>
+	</bean>
+
+	<bean id="Calc3" class="spring.Calculator">
+		<property name="operation" ref="Op3"></property>
+	</bean>
+
+	<bean id="Op4" class="spring.Operation">
+		<constructor-arg name="a" ref="Num1"></constructor-arg>
+		<constructor-arg name="b" ref="Num2"></constructor-arg>
+		<constructor-arg name="operator" ref="OpMUL"></constructor-arg>
+	</bean>
+
+	<bean id="Calc4" class="spring.Calculator">
+		<property name="operation" ref="Op4"></property>
+	</bean>
+
+</beans>
