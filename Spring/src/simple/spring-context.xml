@@ -19,7 +19,7 @@
 </bean>
 
 <!-- Simple properties injection -->
-<bean id="AMD" class="simple.CPU" scope="prototype">
+<bean id="AMD" class="simple.CPU" scope="prototype"><!-- prototype significa che assume le caratteristiche di una fabbrica astratta-->
 <property name="name" value="APU"></property>
 </bean>
 
@@ -41,6 +41,6 @@
 </bean>
 
 <!-- Constructor dependency injection -->
-<bean id="Computer3" class="simple.Computer" autowire="byName">
+<bean id="Computer3" class="simple.Computer" autowire="byName"> <!-- autowire è la causa principale di errore, fatta per i programmatori pigri -->
 </bean>
 </beans>
