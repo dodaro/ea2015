@@ -9,10 +9,8 @@ public class Main {
 		
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("aspects/spring-context.xml");
 		
-		Calculator calculator = context.getBean("calculator", Calculator.class);
-		Calculator.doSum(1, 1);
-		
-		
+		//Calculator calculator = context.getBean("calculator", Calculator.class);	
+		System.out.println(Calculator.doSum(1, 1));
 		context.close();
 	}
 
