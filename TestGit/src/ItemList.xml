@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ItemCategories.xsl" type="text/xsl" ?>
+<ItemList>
+	<Item>
+		<CategoryID>2</CategoryID>
+		<CategoryName>Tool</CategoryName>
+		<ItemName>ToolAbcde</ItemName>
+		<ItemDetails>sth details</ItemDetails>
+	</Item>
+	<Item>
+		<CategoryID>1</CategoryID>
+		<CategoryName>Book</CategoryName>
+		<ItemName>ASP.NET</ItemName>
+		<ItemDetails>ASP.NET12345</ItemDetails>
+	</Item>
+	<Item>
+		<CategoryID>1</CategoryID>
+		<CategoryName>Book</CategoryName>
+		<ItemName>PHP</ItemName>
+		<ItemDetails>PHP12345</ItemDetails>
+	</Item>
+</ItemList>
