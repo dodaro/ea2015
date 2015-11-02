@@ -32,7 +32,7 @@ public class CalculatorTest {
 
 	@Before
 	public void resetResult() {
-		System.out.println("his method is invoked before the execution of test number: " + (testNumber + 1));
+		System.out.println("This method is invoked before the execution of test number: " + (testNumber + 1));
 	}
 
 	@AfterClass
@@ -57,7 +57,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testDivision() {		
-		assertEquals(0.5, calculator.performCalculation(1, 2, Operator.DIVISION), 0.001);		
+		assertEquals("Testing the operation div", 0.5, calculator.performCalculation(1, 2, Operator.DIVISION), 0.001);		
 	}
 
 	@Test(timeout = 100)

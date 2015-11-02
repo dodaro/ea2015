@@ -27,17 +27,19 @@ public class CalculatorParametrizedTest {
 
 	@Parameters
 	public static Collection<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 1, 1 }, { 2, 4 }, { 3, 9 }, { 4, 16 } });
+		return Arrays.asList(new Object[][] { { 1, 1 }, { 3, 4 }, { 3, 9 }, { 4, 16 } });
 	}
 
 	public CalculatorParametrizedTest(double value, double expected) {
+		System.out.println("Valore Value: " + value);
+		System.out.println("Valore expected: " + expected);
 		this.expected = expected;
 		this.value = value;
 	}
 
 	@Test
-	public void square() {
-		assertEquals("", c.square(value), expected, 0.001);
+	public void squareTest() {
+		assertEquals("", expected, c.square(value), 0.001);
 	}
 
 }
