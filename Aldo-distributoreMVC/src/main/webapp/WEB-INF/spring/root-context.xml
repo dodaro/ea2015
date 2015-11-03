@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<bean id="Distributore" class="it.unical.distributore.model.Distributore">
+		<property name="products">
+			<list value-type="it.unical.distributore.model.Product">
+				<bean class="it.unical.distributore.model.Product">
+					<property name="name" value="coffee"/>
+					<property name="price" value="2" />
+					<property name="id" value="0" />
+				</bean>
+				<bean class="it.unical.distributore.model.Product">
+					<property name="name" value="tea" />
+					<property name="price" value="1" />
+					<property name="id" value="1" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="Calculator" class="it.unical.distributore.model.Calculator" scope="prototype"></bean>
+	
+
+
+</beans>
