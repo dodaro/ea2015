@@ -12,7 +12,7 @@
 <form:form method="POST" commandName="machine">
 
 	<div>
-		<form:checkboxes items="${items}" path="goodies" element="li"/>
+		<form:checkboxes items="${items}" itemValue="price" path="purchase" element="li"/>
 	</div>
 	
 	

@@ -1,7 +1,6 @@
 package it.unical.vendingMachine;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.unical.vendingMachine.model.Good;
 import it.unical.vendingMachine.model.VMachine;
 
 
@@ -19,9 +19,7 @@ import it.unical.vendingMachine.model.VMachine;
 public class HomeController {
 	
 
-	private static ArrayList<String> tmpGoodies = new ArrayList<String>();
-	private static HashMap<String, Double> tmpGoodiesPrice = new HashMap<String, Double>();
-	
+	private static ArrayList<Good> tmpGoodies = new ArrayList<Good>();
 	
 	
 	public HomeController() {
@@ -32,13 +30,15 @@ public class HomeController {
 	
 	private void loadData() {
 		
-		tmpGoodies.add("coffee");
-		tmpGoodies.add("chocolate");
-		tmpGoodies.add("tea");
 		
-		tmpGoodiesPrice.put("coffee", 0.5);
-		tmpGoodiesPrice.put("chocolate", 1.0);
-		tmpGoodiesPrice.put("tea", 1.2);
+		Good coffe = new Good("coffee", 0.5);
+		Good chocolate = new Good("chocolate", 1.0);
+		Good tea = new Good("tea", 1.2);
+		
+		tmpGoodies.add(coffe);
+		tmpGoodies.add(chocolate);
+		tmpGoodies.add(tea);
+		
 	}
 	
 	
@@ -59,10 +59,11 @@ public class HomeController {
 			@ModelAttribute("machine") VMachine vMachine) {
 		
 		
+		
 		double tmpSpend = 0;
-		for(String tmpItemName : vMachine.getGoodies()) {
+		for(Double tmpBill : vMachine.getPurchase()) {
 			
-			tmpSpend += tmpGoodiesPrice.get(tmpItemName); 
+			tmpSpend += tmpBill; 
 		}
 		
 		String message;
@@ -74,6 +75,7 @@ public class HomeController {
 			message = "This is your rest " + (vMachine.getMoney() - tmpSpend);
 			request.getSession().setAttribute("message", message);
 		}
+		
 		
 		model.addAttribute("items", tmpGoodies);
 		
