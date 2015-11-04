@@ -5,24 +5,21 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ComputerConfigurator {
-	
+
 	@Bean
-	public CPU cpu1()
-	{
+	public CPU cpu1() {
 		return new CPU("Nvidia");
 	}
 
 	@Bean
-	public CPU cpu2()
-	{
+	public CPU cpu2() {
 		CPU c = new CPU();
-		c.setName("Intel");		
+		c.setName("Intel");
 		return c;
 	}
-	
+
 	@Bean
-	public Computer computer1()
-	{
+	public Computer computer1() {
 		Computer c = new Computer(cpu2());
 		return c;
 	}

@@ -11,15 +11,14 @@ public class Main {
 		Main m = new Main();
 		m.useSpringAnnotations();
 	}
-		
-	void useSpringAnnotations() {		
-		ConfigurableApplicationContext ap = 
-				new AnnotationConfigApplicationContext(ComputerConfigurator.class);
-		CPU cpu1 = ap.getBean("cpu1",CPU.class);
-		cpu1.print();
-		
-		Computer computer1 = ap.getBean("computer1", Computer.class);
-		computer1.print();
+
+	void useSpringAnnotations() {
+		ConfigurableApplicationContext ap = new AnnotationConfigApplicationContext(ComputerConfigurator.class);
+		CPU cpu1Main = ap.getBean("cpu1", CPU.class);
+		cpu1Main.print();
+
+		Computer computer1Main = ap.getBean("computer1", Computer.class);
+		computer1Main.print();
 		ap.close();
 	}
 }
