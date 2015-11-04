@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="nvidia" class="aspects.CPU">
+	<property name="name" value="Tegra3"></property>
+	</bean>	
+	
+	<bean id="logging" class="aspects.Logging" />	
+	<aop:config>
+		<aop:aspect id="aspect1" ref="logging">
+			<aop:before method="beforeGet"
+				pointcut="execution(public !void get*())" />
+			<aop:before method="beforeSet"
+				pointcut="execution(public void set*())" />
+			<aop:before method="beforePrint"
+				pointcut="execution(public void pri*())" />
+			<aop:after method="afterGet"
+				pointcut="execution(public String get*())" />
+			<aop:after method="afterSet"
+				pointcut="execution(public void set*())" />
+			<aop:after-throwing method="afterError"
+				pointcut="execution(public void error())"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
