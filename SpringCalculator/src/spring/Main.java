@@ -14,7 +14,7 @@ public class Main
 	void useSpring()
 	{
 		ConfigurableApplicationContext ap = new ClassPathXmlApplicationContext("spring/spring-context.xml");
-
+ 
 		Calculator calc1 = ap.getBean("Calc1", Calculator.class);
 		System.out.println("Calc1: " + calc1.performCalculation());
 		Calculator calc2 = ap.getBean("Calc2", Calculator.class);
