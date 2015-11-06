@@ -1,5 +1,6 @@
 $(function() {
-  var hideButton = $( "#hideButton" ).button();
+  $("button").button();
+  var hideButton = $( "#hideButton" );
 
   hideButton.click(function() {
   	$("#textToHide").toggleClass( "hidden", 300, "easeOutSine" );
