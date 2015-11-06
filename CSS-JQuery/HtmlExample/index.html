@@ -1,0 +1,161 @@
+<html>
+<head>
+  	<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>	
+	<script>
+	$(document).ready(function(){
+	    $( "#menu button" ).button();
+	});
+
+    $(document).ready(function(){
+        $( "#checkboxes" ).buttonset();
+	});
+	
+	$(document).ready(function(){
+    $("#hide").click(function(){
+        $("img").hide();        
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#show").click(function(){
+        $("#iphoneImg").show();
+        $("#motorolaImg").show();
+        $("#sonyImg").show();
+    });
+	});	
+	
+	$(document).ready(function(){
+    $("#small").click(function(){
+        $("#content img").addClass("imagessmall")
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#large").click(function(){
+        $("img").removeClass("imagessmall");
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#small-large").click(function(){
+        $("img").toggleClass("imagessmall");
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#fade-in").click(function(){
+        $("#content img").fadeIn("slow");
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#fade-out").click(function(){
+        $("#content img").fadeOut("slow");
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#slide-down").click(function(){
+        $("#hidden").slideDown("slow");
+    });
+	});
+	
+	$(document).ready(function(){
+    $("#slide-up").click(function(){
+        $("#hidden").slideUp("slow");
+    });
+	});	
+	
+	$(document).ready(function(){
+	$("#textButton").click(function(){
+		$("#content p").text($("#text").val());
+	});
+	});
+	
+	$(document).ready(function(){
+	$("#add").click(function(){
+		$("#hidden").append("<p class='par'>A new paragraph</p>");
+	});
+	});	
+	
+	$(document).ready(function(){
+	$("#remove").click(function(){
+		$("#content p").remove();
+	});
+	});
+	
+	/*$(document).ready(function(){	
+	$("#iphone").change(function(){
+        if($(this).is(":checked")){
+      		$("#iphoneImg").hide();
+        }
+        else {
+	        $("#iphoneImg").show();
+        }
+	});
+	});*/
+	
+	$(document).ready(function(){	
+	$("#hide-show-selected").click(function(){
+		$("#checkboxes input[type=checkbox]").each(function () {
+			if(this.checked) {
+				$("#"+this.id+"Img").hide();
+			}
+			else {
+				$("#"+this.id+"Img").show();
+			}			
+		});
+	});
+	});		
+    </script>
+</head>
+
+<body>
+	<div id="wrapper">
+  		<div id="header">
+		</div>
+
+		<div id="menu">
+			<table>			
+			<tr><td><button id="hide" class="button">Hide</button></td></tr>
+			<tr><td><button id="show" class="button">Show</button></td></tr>
+			<tr><td><button id="small" class="button">Small</button></td></tr>
+			<tr><td><button id="large" class="button">Large</button></td></tr>
+			<tr><td><button id="small-large" class="button">Small/Large</button></td></tr>
+			<tr><td><button id="fade-out" class="button">Fade out</button></td></tr>
+			<tr><td><button id="fade-in" class="button">Fade in</button></td></tr>
+			<tr><td><button id="slide-down" class="button">Slide down</button></td></tr>
+			<tr><td><button id="slide-up" class="button">Slide up</button></td></tr>
+			<tr><td><input  id="text" title="Set text" class="text"><button id="textButton" class="button">Set</button></td></tr>
+			<tr><td><button id="add" class="button">Add par</button></td></tr>
+			<tr><td><button id="remove" class="button">Remove all</button></td></tr>
+			<tr><td><button id="hide-show-selected" class="button">Hide/Show sel</button></td></tr>
+			</table>
+		</div>
+
+		<div id="content">
+			<img src="images/iphone.png" alt="iphone" id="iphoneImg" class="images">
+			<img src="images/motorola.png" alt="motorola" id="motorolaImg" class="images">
+			<img src="images/sony.png" alt="sony" id="sonyImg" class="images">
+			<div id="hidden">
+				<p class="par">Par1</p>
+				<p class="par">Par2</p>
+				<p class="par">Par3</p>
+			</div>
+			
+			<div id="checkboxes">
+			<input type="checkbox" id="iphone"><label for="iphone">iPhone</label>
+  			<input type="checkbox" id="motorola"><label for="motorola">Motorola</label>
+	  		<input type="checkbox" id="sony"><label for="sony">Sony</label>
+			</div>			
+		</div>
+	
+		<div id="footer">
+		Enterprise Applications - Department of Mathematics and Computer Science - University of Calabria - Arcavacata di Rende (CS) - Italy
+		</div>
+	</div>
+</body>
+</html>
