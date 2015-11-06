@@ -1,7 +1,0 @@
-div:target {border: 1px solid blue}
-
-div:not(.black) {color: red}
-
-input:enabled {color:green}
-
-input:checked {margin-left:20px}
