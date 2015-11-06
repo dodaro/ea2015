@@ -1,0 +1,70 @@
+body{	
+	font: 62.5% "Trebuchet MS", sans-serif;
+}
+
+#wrapper{	
+	background: #FFFFFF;
+	margin: 60px auto;
+	width: 900px;
+	height: 984px;
+}
+
+#header{	
+	background: #F0F0F0;
+	height: 200px;
+	width: 900px;
+	background-image: url("../images/unical.png");
+}
+
+#menu{
+	background: #333333;
+	float: left;
+	width: 120px;
+	height: 784px;
+}
+
+#content{
+	background: #d2d0d2;	
+	width: 900px;
+	height: 784px;
+}
+
+#footer{ 
+	background: #838283;
+	height: 20px;
+	width: 900px;
+	text-indent: 10px;
+}
+
+#hidden{
+	display: none;
+}
+
+.par{
+	background: yellow;
+}
+
+.button{	
+    margin-left:10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    font: 70% "Trebuchet MS", sans-serif;
+}
+
+.text{	
+    max-width: 100px;
+    margin-left:10px;
+}
+
+.images{
+	height: 320px;
+	width: 250px;
+}
+
+.imagessmall{
+	height: 120px;
+	width: 70px;
+}
