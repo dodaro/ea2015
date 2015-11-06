@@ -1,0 +1,56 @@
+html,body {
+	height: 100%;
+	/*width: 100%*/;
+}
+
+body {
+	margin: 50px;
+}
+
+.black {
+	
+	background-color: black;
+}
+
+.container {
+	width: 100%;
+	/*background-color: yellow;*/
+}
+
+
+.left {
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 40%;
+	/*background-color: red;*/
+	display: inline-block;
+}
+
+.right {
+	width: 40%;
+	/*background-color: blue;*/
+	display: inline-block;
+	margin-left: -4;
+} 
+
+.box {
+	text-align: center;
+	height: 400px;
+	min-height: 400px;
+	background-color: white;
+	border: 5px solid blue;
+	margin-bottom: 10px;
+}
+
+.content {
+	width: 50%;
+	padding-top:15%;
+	/*height: 100%;*/
+	margin: 0 auto;
+	/*display*/: block;
+	background-color: white;
+}
+
+.hidden {
+	opacity:0.0;
+}
