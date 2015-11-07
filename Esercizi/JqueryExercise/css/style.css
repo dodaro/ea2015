@@ -54,3 +54,15 @@ body {
 .hidden {
 	opacity:0.0;
 }
+
+.social {
+	width: 40%;
+	text-align: center;
+}
+
+#pic {
+	min-height: 30%;
+	min-width: 100%;
+	max-height: 30%;
+	max-width: 100%;
+}
