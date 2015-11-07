@@ -18,20 +18,14 @@ body {
 }
 
 
-.left {
+.column {
 	margin-left: 5%;
-	margin-right: 5%;
 	width: 40%;
 	/*background-color: red;*/
 	display: inline-block;
+	float: left;
 }
 
-.right {
-	width: 40%;
-	/*background-color: blue;*/
-	display: inline-block;
-	margin-left: -4;
-} 
 
 .box {
 	text-align: center;
@@ -47,7 +41,7 @@ body {
 	padding-top:15%;
 	/*height: 100%;*/
 	margin: 0 auto;
-	/*display*/: block;
+	/*display: block;*/
 	background-color: white;
 }
 
