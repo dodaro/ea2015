@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="index.css" type="text/css" />
+<script src="jquery.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+
+<title>CSS&amp;JQuery</title>
+</head>
+<body>
+	<div id="container">
+		<div>
+			<div id="div1" class="innerDiv">
+				<h2>This is the div1!</h2>
+				<p>You can use this div to store information</p>
+				<button class="js-button-hide">Click to hide this div1</button>
+			</div>
+			<div class="innerDiv">
+				<h2>This is the div2!</h2>
+				<p>Social networks:</p>
+				<button class="js-button-link" data-url="http://www.twitter.com">Twitter</button>
+				<button class="js-button-link" data-url="http://www.facebook.com">Facebook</button>
+			</div>
+		</div>
+		<div>
+			<div class="innerDiv">
+				<h2>This is the div3!</h2>
+				<p>Add a link to an image:</p>
+				<input type="text" class="js-image-url"/>
+				<button class="js-button-load-image">Click to add the image in div4</button>
+			</div>
+			<div id="div4" class="innerDiv">
+				<h2>This is the div4!</h2>
+				<p>This div will contain the image loaded by div3</p>
+				<div id="image-container"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
