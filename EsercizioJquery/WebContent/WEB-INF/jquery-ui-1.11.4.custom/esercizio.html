@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="./jquery-ui.css" rel="stylesheet">
+<link href="./esercizio.css" rel="stylesheet">
+<script src="./external/jquery/jquery.js"></script>
+<script src="./jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#buttonOne").click(function(){
+        $("#divOne").fadeOut();
+    });
+    
+    $("#buttonTwo_a").click(function(){
+    	 window.open("http://www.twitter.com");
+    });
+    
+    $("#buttonTwo_b").click(function(){
+    	 window.open("http://www.facebook.it");
+    });
+    
+    $("#buttonThree").click(function(){
+        //console.log("SCELTA");
+        var x=$("#inputThree").val();
+        console.log(x);
+        $('#imageFour').attr('src', x);
+        $('#imageFour').attr('width', "200px");
+        $('#imageFour').attr('height', "200px");
+        $('#imageFour').fadeIn();
+    });
+});
+
+</script>
+
+</head>
+<body>
+<div id="container">
+	<table id="tab">
+		<tr>
+			<td>
+				<div id="divOne" class="divTable">
+					<h3>This is the div 1</h3>
+					<h5>You can use..</h5>
+					
+					<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="buttonOne"> click to hide</button>
+				</div>
+			</td>
+			<td>
+				<div id="divTwo" class="divTable">
+					<h3>This is the div 1</h3>
+					<h5>Social network</h5>
+					
+					<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="buttonTwo_a"> twitter</button>
+					<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="buttonTwo_b"> facebook</button>
+				</div>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="divThree" class="divTable">
+					<h3>This is the div 3</h3>
+					<h5>Select image</h5>
+					
+					<!-- /home/davide/Desktop/Robe/16527_10204093790204846_7566672419923511838_n.jpg -->
+					
+					<div>
+						<input type="text" id="inputThree"/>
+					</div>
+					<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="buttonThree"> click to conferm</button>
+				</div>
+			</td>
+			<td>
+				<div id="divFour" class="divTable">
+					<h3>This is the div 4</h3>
+					<h5>Shows image</h5>
+					<img id="imageFour" style="display:none" src="#" alt="your image"/>
+				</div>
+			</td>
+		</tr>
+
+	</table>
+</div>
+
+</body>
+</html>

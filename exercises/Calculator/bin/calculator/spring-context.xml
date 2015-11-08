@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Operation bean creation -->
+<bean id="Sum" class="calculator.Sum">
+</bean>
+
+<bean id="Subtraction" class="calculator.Subtraction">
+</bean>
+
+<bean id="Multiplication" class="calculator.Multiplication">
+</bean>
+
+<bean id="Division" class="calculator.Division">
+</bean>
+
+<!-- Simple properties injection -->
+
+<bean id="Calculator" class="calculator.Calculator">
+<property name="sum" ref="Sum"></property>
+<property name="subtraction" ref="Subtraction"></property>
+<property name="multiplication" ref="Multiplication"></property>
+<property name="division" ref="Division"></property>
+</bean>
+
+</beans>

@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+#tab{
+
+	background: black;
+	margin: auto;
+	color: white;
+	border:solid;
+	border-color: gray;
+	
+}
+
+table td {
+	
+	width: 250px;
+	background: gray;
+	padding: 10px;
+}
+
+
+
+.divTable{
+	margin: auto;
+	width: 150px;
+}
+
