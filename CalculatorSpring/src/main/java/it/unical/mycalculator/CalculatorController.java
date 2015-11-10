@@ -31,8 +31,7 @@ public class CalculatorController {
 	}
 
 	@RequestMapping(value = "/calculator", method = RequestMethod.POST)
-	public String executeOperation(@RequestParam String calc, 
-			@ModelAttribute("calculatorAction") Calculator calculator,
+	public String executeOperation(@RequestParam String calc, @ModelAttribute("calculatorAction") Calculator calculator,
 			Model model) {
 		logger.info("Execute operation " + calculator.getNumber1() + calc + calculator.getNumber2());
 		if (calc != null && calc.length() == 1)

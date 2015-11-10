@@ -24,10 +24,16 @@ public class HomePageController {
 	public String other(HttpServletRequest request, Model model) {
 		logger.info("Welcome home!");
 
+
 		String userSes = (String) request.getSession().getAttribute("userSession");
 		if (userSes == null)
 			return "redirect:login";
 		model.addAttribute("user", userSes);
+
+		String user = (String) request.getSession().getAttribute("userSession");
+		if (user == null)
+			return "redirect:login";
+		model.addAttribute("user", user);
 		return "userHomePage";
 	}
 
