@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- Root Context: defines shared resources visible to all other web components -->
+  <bean id="vmachineBean" class="it.unical.vendingEa2015.model.Vmachine">
+    <property name="goodies">
+      <list>
+        <ref bean="good1" />
+        <ref bean="good2" />
+        <ref bean="good3" />
+        <ref bean="good4" />
+      </list>
+    </property>
+      <property name="money" value="0.0"/>
+      <property name="purchased" value="0.0"/>
+  </bean>
+
+  <bean id="good1" class="it.unical.vendingEa2015.model.Good">
+    <property name="name" value="Coffee"/>
+    <property name="price" value="0.5"/>
+  </bean>
+
+  <bean id="good2" class="it.unical.vendingEa2015.model.Good">
+    <property name="name" value="Tea"/>
+    <property name="price" value="1"/>
+  </bean>
+
+  <bean id="good3" class="it.unical.vendingEa2015.model.Good">
+    <property name="name" value="Milk"/>
+    <property name="price" value="1.5"/>
+  </bean>
+
+  <bean id="good4" class="it.unical.vendingEa2015.model.Good">
+    <property name="name" value="Cappuccino"/>
+    <property name="price" value="2.0"/>
+  </bean>
+</beans>
