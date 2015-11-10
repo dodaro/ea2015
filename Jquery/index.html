@@ -1,0 +1,98 @@
+<html>
+<head>
+  	<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>	
+	<script>
+	$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#div1").hide();        
+    });
+	});
+	
+	$(document).ready(function(){
+    $('#twitter').click(function(){
+	 window.location = 'http://www.twitter.com';
+	});       
+   	});
+	
+	$(document).ready(function(){
+    $('#facebook').click(function(){
+	 window.location = 'http://www.facebook.com';
+	});       
+   	});
+	
+	
+	
+	
+	
+	$(document).ready(function(){
+    $('#add').click(function(){
+		var link = $(".js-image-url").val();
+		$("#image-container").append("<img src='" + link + "' />");
+		});
+			});
+	
+    </script>
+</head>
+
+<body >
+	
+		<div id="container">
+  			<table>			
+			<tr>
+			<td>
+			<div id="div1">
+			<h1>This is div1!</h1>
+			<h2>You can use this div to store some information</h2>
+			<button id="hide" class="button">Click to Hide div1</button>
+			</div>
+			</td>
+			</tr>
+			
+			
+			
+			<tr>
+			<td>
+			<div id="div3">
+			<h1>This is div3!</h1>
+			<h2>Add a link to an image</h2>
+			<input type="text" class="js-image-url"/>
+			<button id="add" class="button">Click to add the image in div4!</button>
+			</div>
+			</td>
+			</tr>
+			
+			<tr>
+			<td>
+			<div id="div2">
+			<h1>This is div2!</h1>
+			<h2>Social Networks:</h2>
+			<button id="twitter" class="button">Twitter</button>
+			<button id="facebook" class="button">Facebook</button>
+			</div>
+			</td>
+			</tr>
+			
+			<tr>
+			<td>
+			
+			<div id="div4">
+			<h1>This is div4!</h1>
+			<h2>This div will contain the image loaded by div3</h2>
+			<div id="image-container">
+			</div>
+			</div>
+			</td>
+			</tr>
+		</div>
+			
+		
+
+		
+	
+		
+	</div>
+</body>
+</html>
