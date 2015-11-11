@@ -12,9 +12,9 @@
 	<form:form modelAttribute="machine" method="post"
 		commandName="dealerForm">
 		<table>
-			<c:forEach items="${productList}" var="current" varStatus="status">
+			<c:forEach items="${machine.getProducts()}" var="current" varStatus="status">
 				<tr>
-					<td><form:checkbox path="productsChoosen" value="${current.getName()}" />${current.getName()}</td>
+					<td><form:checkbox path="choosenProd" value="${current.getPrice()}" />${current.getName()}</td>
 					<td>${current.getPrice()}</td>
 				</tr>
 			</c:forEach>
