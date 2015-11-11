@@ -1,0 +1,53 @@
+#mainBody{
+	font: 80% "Verdana", sans-serif;
+	background: #000000;
+	width: 1000px;
+	height: 400px;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.main{
+	text-align :left;
+	float: left;
+	margin-left: 5px;
+	height: 190;
+	width: 490;
+	color: #FFFFFF;
+	background: #444444;
+	margin-top: 15px;
+}
+
+div>*{
+	margin-left: 20px;
+}
+#showButton{
+	display: none;
+	
+}
+#social{
+	float: right;
+}
+#ImagePanel{
+	float: right;
+}
+#loadImage{
+	clear:left;
+}
+table{
+	margin-top: 10px;
+}
+
+input{
+	font-weight: bold;
+}
+.SocialButton{
+	margin-top: 20px;
+	width: 100px;
+	height: 40px;
+}
+img{
+	margin-top:5px;
+	text-align: left;
+	width: 440px;
+	height: 180px;
+}

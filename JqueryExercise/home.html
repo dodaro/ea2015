@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="./script/jquery-ui-1.11.4/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./style/style.css">
+<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#hideButton").click(function() {
+			$("#hide").hide();
+			$("#showButton").show();
+		});
+	});
+
+	$(document).ready(function() {
+		$("#showButton").click(function() {
+			$("#showButton").hide();
+			$("#hide").show();
+		});
+	});
+
+	$(document).ready(function() {
+		$("#FB").click(function() {
+			// $("#socialFrame").html('<object data="https://www.facebook.com/"/>');
+			// $("#socialFrame").load('https://www.facebook.com/');
+			window.open('https://www.facebook.com/', '_blank');
+		});
+	});
+
+	$(document).ready(function() {
+		$("#TW").click(function() {
+			window.open('https://twitter.com/?lang=it', '_blank');
+		});
+	});
+	
+	$(document).ready(function() {
+		$("#addIMG").click(function() {
+			var current=$("#ImageRef").val();
+			$("#ImagePanel").html("<img id=\"showImage\" /img> ");
+			$("#showImage").attr("src",current);
+			$("#showImage").show();
+		});
+	});
+	
+</script>
+</head>
+
+<body id="mainBody">
+	<div id="hide" class="main">
+		<h1>This is the Div1!</h1>
+		<p>You can use this div to store some information</p>
+		<input id="hideButton" type="button" value="Click to hide this div" />
+	</div>
+
+	<input id="showButton" type="button" value="Click to show div1" />
+
+	<div id="social" class="main">
+		<h1>This is the div2!</h1>
+		<table>
+			<tr>
+				<td><input type="button" id="FB" value="Facebook"
+					class="SocialButton" /></td>
+				<td><input type="button" id="TW" value="Twitter"
+					class="SocialButton" /></td>
+			</tr>
+		</table>
+		<!--<div id="socialFrame"></div>>-->
+	</div>
+
+	<div id="loadImage" class="main">
+		<h1>This is the div3!</h1>
+		<p>Add a link to an image</p>
+		<table>
+			<tr>
+				<td><input type="text" id="ImageRef" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="addIMG"
+					value="Click to Add the image in div4!" /></td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="ImagePanel" class="main">
+		<h1>This is the div4!</h1>
+		<p>This div will contain the imager loaded by the div3!</p>
+	</div>
+</body>
+
+</html>

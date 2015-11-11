@@ -12,44 +12,12 @@
 	<form:form modelAttribute="machine" method="post"
 		commandName="dealerForm">
 		<table>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="1" />Coffe</td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="3" /> Tea</td>
-				<td>3</td>
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="2" /> Snack</td>
-				<td>2</td>
-
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="3" /> Milk</td>
-				<td>3</td>
-
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="8" /> Sandwich</td>
-				<td>8</td>
-
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="4" /> Chips</td>
-				<td>4</td>
-
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="3" /> Chewingum</td>
-				<td>3</td>
-
-			</tr>
-			<tr>
-				<td><form:checkbox path="choosenProd" value="1" /> Water</td>
-				<td>1</td>
-
-			</tr>
+			<c:forEach items="${productList}" var="current" varStatus="status">
+				<tr>
+					<td><form:checkbox path="productsChoosen" value="${current.getName()}" />${current.getName()}</td>
+					<td>${current.getPrice()}</td>
+				</tr>
+			</c:forEach>
 			<tr></tr>
 			<tr>
 				<td>Insert Money:</td>
@@ -61,7 +29,7 @@
 			<tr></tr>
 			<tr></tr>
 			<tr>
-				<td><label>${message }</label></td>
+				<td><label>${message}</label></td>
 			</tr>
 		</table>
 	</form:form>

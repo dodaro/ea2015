@@ -2,23 +2,16 @@ package it.unical.dealer.model;
 
 public class DealerMachine {
 
-	private Product[] products;
+	private String[] productsChoosen;
 
 	private int[] choosenProd;
 	private int money;
 	private String message;
 	
 	public DealerMachine() {
+		
 	}
-
-	public Product[] getProducts() {
-		return products;
-	}
-
-	public void setProducts(Product[] products) {
-		this.products = products;
-	}
-
+	
 	public int[] getChoosenProd() {
 		return choosenProd;
 	}
@@ -55,5 +48,31 @@ public class DealerMachine {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String purchaseProd() {
+		message = "";
+		int val = 0;
+		for (String p : productsChoosen) {
+			val += Integer.valueOf(p.charAt(p.length()-1));
+		}
+		if (money < val)
+			message = message.concat("You need to add " + String.valueOf(val - money) + " euro to purchase");
+		else {
+			message = message.concat("Thanks for purchase. \n Here your rest :" + String.valueOf(money - val));
+		}
+		return message;
+	}
+
+
+
+	public String[] getProductsChoosen() {
+		return productsChoosen;
+	}
+
+
+
+	public void setProductsChoosen(String[] productsChoosen) {
+		this.productsChoosen = productsChoosen;
 	}
 }

@@ -4,5 +4,39 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+
+	<bean id="p1" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Coffe"></property>
+		<property name="price" value="1"></property>
+	</bean>
+
+	<bean id="p2" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Tea"></property>
+		<property name="price" value="3"></property>
+	</bean>
+	<bean id="p3" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Snack"></property>
+		<property name="price" value="2"></property>
+	</bean>
+	<bean id="p4" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Milk"></property>
+		<property name="price" value="3"></property>
+	</bean>
+	<bean id="p5" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Sandiwich"></property>
+		<property name="price" value="8"></property>
+	</bean>
+	<bean id="p6" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Chips"></property>
+		<property name="price" value="4"></property>
+	</bean>
+
+	<bean id="p7" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Chewingum"></property>
+		<property name="price" value="3"></property>
+	</bean>
+	<bean id="p8" class="it.unical.dealer.model.Product">
+		<property name="name"  value="Water"></property>
+		<property name="price" value="1"></property>
+	</bean>
 </beans>
