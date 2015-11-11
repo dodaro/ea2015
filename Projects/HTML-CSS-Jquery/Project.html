@@ -1,0 +1,112 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <body>
+
+ <script type="text/javascript">
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").toggle();
+    });
+});
+
+
+   function thumb(files) {
+ 
+        if (files == null || files == undefined) {
+            document.write("This Browser has no support for HTML5 FileReader yet!");
+            return false;
+        }
+ 
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType = /image.*/;
+ 
+            if (!file.type.match(imageType)) {
+                continue;
+ 
+            }
+ 
+            var reader = new FileReader();
+ 
+            if (reader != null) {
+ 
+                reader.onload = GetThumbnail;
+                reader.readAsDataURL(file);
+            }
+ 
+ 
+        }
+    }
+     
+    function GetThumbnail(e) {
+        var myCan = document.createElement('canvas');
+        var img = new Image();
+        img.src = e.target.result;
+        img.onload = function () {
+ 
+            myCan.id = "myTempCanvas";
+            var tsize = document.getElementById("txtThumbSize").value;
+            myCan.width = Number(tsize);
+            myCan.height = Number(tsize);
+            if (myCan.getContext) {
+                var cntxt = myCan.getContext("2d");
+                cntxt.drawImage(img, 0, 0, myCan.width, myCan.height);
+                var dataURL = myCan.toDataURL();
+ 
+ 
+                if (dataURL != null && dataURL != undefined) {
+                    var nImg = document.createElement('img');
+                    nImg.src = dataURL;
+                    document.body.appendChild(nImg);
+ 
+                }
+                else
+                    alert('unable to get context');
+ 
+            }
+ 
+        }
+ 
+    }
+ 
+ </script>
+ 
+<div id="div1">
+<h1>This is the Division 1</h1>
+<p>You can use this div to hide/show information on this webpage.</p>
+<button>Toggle</button>
+</div>
+
+<div id="div2">
+<h1>This is the Division 2</h1>
+<p>Social Networks : </p>
+<form action="http://facebook.com">
+<input type="image" width="30" value="submit" src="fb.png" onMouseOver="this.src='fb.png'">
+</form>
+<form action="http://www.twitter.com">
+<input type="image" width="30" value="submit" src="twitter.png" onMouseOver="this.src='twitter.png'">
+</form>
+<form action="http://www.google.com">
+<input type="image" width="30" value="submit" src="image2.png" onMouseOver="this.src='image2.png'">
+</form>
+</div>
+
+<div id="div3">
+<h1>This is the Division 3</h1>
+<p>Add a link to an image</p>
+<label> Thumbanil Size: </label>
+<input id="txtThumbSize" type="text" style="width: 40px" value="64"/> px<hr />
+<label> Select File To Create Thumbnail : </label>
+<input type="file" id="input" multiple onchange="thumb(this.files)"> <hr/>
+</div>
+
+<div id="div4">
+<h1>This is the Division 4</h1>
+<p>This division will contain the image loaded by division 3.</p>
+</div>
+
+</body> 
+</head>
+</html>
