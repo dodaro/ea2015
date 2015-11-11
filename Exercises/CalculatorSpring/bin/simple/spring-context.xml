@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<bean id="Calc" class="simple.Calculator">
+		<constructor-arg name="brand" value="CasioBase" ></constructor-arg>
+	</bean>
+	
+	<bean id="SciCalc" class="simple.ScientificCalculator">
+		<constructor-arg name="brand" value="CasioDeluxe"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="Checker" class="simple.Checker"></bean>
+	<aop:config>
+		<aop:aspect id="checkZeroAspect" ref="Checker">
+			<aop:before method="check"
+			 pointcut="(execution(public double division(..))) and args(a, b)"/>
+		</aop:aspect>
+	</aop:config>
+
+
+</beans>
