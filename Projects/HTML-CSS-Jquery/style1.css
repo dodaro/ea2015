@@ -1,0 +1,6 @@
+html, body { height: 100%; padding: 40; margin: 10; background-color: #000; }
+div { width: 45%; height: 40%; float: left; }
+#div1 { background: grey; border: 2px solid white }
+#div2 { background: grey; border: 2px solid white }
+#div3 { background: grey; border: 2px solid white }
+#div4 { background: grey; border: 2px solid white }
