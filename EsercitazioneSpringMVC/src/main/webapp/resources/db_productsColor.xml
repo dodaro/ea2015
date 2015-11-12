@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db_productsColor>
+	<productColor>
+		<name>orange</name>
+		<imagePath>images/board1.jpg</imagePath>
+		<price>66.00</price>
+	</productColor>
+	<productColor>
+		<name>blue</name>
+		<imagePath>images/board2.jpg</imagePath>
+		<price>46.00</price>
+	</productColor>
+	<productColor>
+		<name>black</name>
+		<imagePath>images/board3.jpg</imagePath>
+		<price>64.00</price>
+	</productColor>
+	<productColor>
+		<name>red</name>
+		<imagePath>images/board4.jpg</imagePath>
+		<price>99.00</price>
+	</productColor>
+</db_productsColor>

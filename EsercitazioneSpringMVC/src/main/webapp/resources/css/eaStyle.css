@@ -1,0 +1,49 @@
+.header {
+	width: 100%;
+	height: 200px;
+	background-color: orange;
+	border-style: groove;
+	border-width: 2px;
+	border-color: blue;
+}
+
+.header img {
+	padding-left: 40%;
+	height: 200px;
+	/* 	background-repeat: repeat; */
+}
+
+.body {
+	min-height: 400px;
+}
+
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: blue;
+	border-style: groove;
+	border-width: 2px;
+	border-color: orange;
+}
+
+.orangeText {
+	color: orange;
+}
+
+.blueText {
+	color: blue;
+}
+
+.centred {
+	padding-left: 40%;
+}
+
+.grayColor {
+	font-size: 1.2em;
+	color: gray;
+}
+
+.whiteColor {
+	font-size: 1.2em;
+	color: white;
+}

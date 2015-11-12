@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db_products>
+	<product>
+		<name>Snowboard1</name>
+<!-- 		<imagePath>images/board1.jpg</imagePath> -->
+		<description> Descrizione1	</description>
+		<price>66.00</price>
+	</product>
+	<product>
+		<name>Snowboard2</name>
+<!-- 		<imagePath>images/board2.jpg</imagePath> -->
+		<description> Descrizione1	</description>
+		<price>12.00</price>
+	</product>
+	<product>
+		<name>Snowboard3</name>
+<!-- 		<imagePath>images/board3.jpg</imagePath> -->
+		<description> Descrizione1	</description>
+		<price>76.00</price>
+	</product>
+</db_products>
