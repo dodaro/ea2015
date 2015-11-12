@@ -1,0 +1,60 @@
+#wrapper{	
+	margin:  auto;
+	width: 900px;
+	height: 800px;
+	background:gray;
+}
+#header{	
+	background: #White;
+	height:200px;
+	width: 880px;
+	background-image: url("../one/unical.png");
+
+    float: left;
+	margin-left: 1%;
+	margin-bottom: 1%;
+}
+
+
+#button{	
+    margin-left:15px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    min-width: 150px;
+    max-width: 150px;
+    width: 150px;
+    font: 90% "Times New Roman", Times, serif;
+
+
+}
+
+#Div {
+	background:gray;
+	width: 48.5%;
+	height: 40.5%;
+	float: left;
+	margin-left: 1%;
+	margin-bottom: 1%;
+	background-image: url("../one/a.jpg");
+	
+}
+
+
+
+	
+
+
+
+}
+#footer{ 
+	background: white;
+	height: 30px;
+	width: 900px;
+         margin:  auto;
+	font: italic 15 px Georgia, serif;
+}
+
+
+
+
+

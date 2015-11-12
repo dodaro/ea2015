@@ -1,0 +1,51 @@
+<html>
+<head>
+  	<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="./Secondpage.css">
+	<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>	
+	<script>
+	$(document).ready(function() {
+		$("#hideButton").click(function() {
+			$("#div1").addClass("noDisplay");
+		});
+	});
+
+	$(document).ready(function() {
+		$("#loadimg").click(function() {
+			$('<img src="' + $("#imagePath").val() + '">').load(function() {
+				$(this).appendTo('#div4');
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+   <div id="header">
+   <
+     </div>	
+	
+		     
+			  <button id="loadimg" class="button small orange opacityAnimation">Blue(100.00euro) </button>
+								<button id="loadimg" class="button small orange opacityAnimation">Red(200 euro) </button>
+												<button id="loadimg" class="button small orange opacityAnimation">green(300.0 euro) </button>
+												
+												
+					<div>							
+												
+						<button id="loadimg" class="button small orange opacityAnimation">Next </button>
+
+			
+			
+
+												
+
+
+                                
+
+		<div id="footer">
+		   Enterprise Applications - Department of Mathematics and Computer Science - University of Calabria - Arcavacata di Rende (CS) - Italy
+		      </div>
+</body>
+</html>
