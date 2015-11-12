@@ -1,0 +1,94 @@
+#wrapper{	
+	margin:  auto;
+	width: 900px;
+	height: 800px;
+	background:#861CF0;
+}
+#header{	
+	;
+	height:135px;
+	width: 880px;
+	background-image: url("images/im.png");
+        float: left;
+	margin-left: 1%;
+	margin-bottom: 1%;
+}
+#body {
+	font-family: "FORTE", "Times New Roman", Times, serif;
+}
+.button{	
+    margin-left:15px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    min-width: 150px;
+    max-width: 150px;
+    width: 150px;
+    font: 90% "Times New Roman", Times, serif;
+}
+.Div {
+	background:#E9B482;
+	width: 48.5%;
+	height: 40.5%;
+	float: left;
+	margin-left: 1%;
+	margin-bottom: 1%;
+        border-radius: 8px;
+        cursor: pointer;
+        transition-property: background;
+        transition-duration: 1s;
+        transition-timing-function: linear;		
+}
+.Div:hover {
+ 	 background: #ff7b29;
+}
+.subDiv:hover {
+ 	 background: #ff7b29;
+}
+.subDiv {
+	background:#861CF0;
+	width:  85%;
+	height: 85%;
+	margin-top: 5%;
+	margin-left: 5%;
+	padding-left: 5%; 
+        border-radius:20px;
+        cursor: pointer;
+        transition-property: background;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+}
+
+h1 {
+	font-size: 2.5em;
+
+}
+.noDisplay {
+	display: none;
+}
+#div4 > img {
+	width: 50%;
+	height: 60%;
+        position: relative;
+        -webkit-animation: mymove 5s infinite; 
+   	animation: mymove 5s infinite;
+
+}
+#footer{ 
+	background: #861CF0;
+	height: 30px;
+	width: 900px;
+         margin:  auto;
+	font: italic 15 px Georgia, serif;
+}
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 150px;}
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 150px;}
+}
+
+
+
+

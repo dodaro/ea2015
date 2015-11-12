@@ -1,0 +1,108 @@
+<html>
+<head>
+  	<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="./s.css">
+	<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>	
+	<script>
+$(document).ready(function() {
+		$("#button").button();
+		$("#show").button();
+	});
+	
+	$(document).ready(function() {
+		$("#form").buttonset();
+	});
+	
+	$(document).ready(function() {
+		$('#show').on('click', function() {
+			var v = $("input[type=radio button]:checked", "#form").val();
+			alert(v);
+			$("#result").load("/resources/info.html");						
+		});
+	});
+ 
+	
+	$(document).ready(function() {
+		$("#loadimg").click(function() {
+			$('<img src="' + $("#imagePath").val() + '">').load(function() {
+				$(this).appendTo('#div4');
+			});
+		});
+	});
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#blueimg").show();
+        $("#redimg").show();
+        $("#blackimg").show();
+    });
+	});
+
+
+$(document).ready(function(){	
+	$("#radio").change(function(){
+        if($(this).is(":checked")){
+      		$('<img src="' + $("#imagePath").val() + '">').load(function() {
+				$(this).appendTo('#div4');
+			});
+        }
+        else {
+	        $("#iphoneImg").hide;
+		 $("#iphoneImg").hide;
+
+        }
+	});
+	});
+$(function () {
+    $('label').click(function () {
+        var that = this,
+            images = $(this).closest('div.container').find('img');
+        images.each(function () {
+            var t = $(this);
+            if (t.data('color') === $(that).find('input').val()) {
+                t.attr({
+                    src: 'selected.png',
+                    alt: 'selected image'
+                });
+            } else {
+                t.attr({
+                    src: t.data('color') + '.jpg',
+                    alt: t.data('color') + ' image'
+                });
+            }
+        });
+    });
+});	
+</script>
+</head>
+<body>
+<div id="wrapper">
+   <div id="header">
+     </div>	
+	<div id="mainDiv">
+       		<div>
+          <form id="form" action="#" method="post">
+	       <table>
+	         <tr><td>
+			<input id="fr" name="products" type="radio" value="fr "/><input type="hidden" name="_products" value="on"/>
+			<label for="fr" img src="blackimg.jpg" >SE Blue </label>
+				<input id="milk" name="products" type="radio" value="Milk"/><input type="hidden" name="_products" value="on"/>
+				<label for="milk">SE/SL Red </label>
+				<input id="vodka" name="products" type="radio" value="Vodka"/><input type="hidden" name="_products" value="on"/>
+			<label for="vodka">SE/FL Black</label>
+				</td></tr>
+			</table>
+			<table>
+			</table>
+			</form>
+       		 </div>
+		</div>
+<div>
+
+		<div id="footer">
+		   Enterprise Applications - Department of Mathematics and Computer Science - University of Calabria - Arcavacata di Rende (CS) - Italy
+		      </div>
+</div>
+</body>
+
+</html>

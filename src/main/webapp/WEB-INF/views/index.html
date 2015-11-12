@@ -1,0 +1,102 @@
+<html>
+<head>
+  	<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="./s.css">
+	<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>	
+	<script>
+$(document).ready(function() {
+		$("#button").button();
+		$("#show").button();
+	});
+	
+	$(document).ready(function() {
+		$("#form").buttonset();
+	});
+	
+	$(document).ready(function() {
+		$('#show').on('click', function() {
+			var v = $("input[type=radio button]:checked", "#form").val();
+			alert(v);
+			$("#result").load("/resources/info.html");						
+		});
+	});
+ $(function() {
+    $( "#accordion" ).accordion();
+  });
+	$(document).ready(function() {
+		$("#hideButton").click(function() {
+			$("#div1").addClass("noDisplay");
+		});
+	});
+
+	$(document).ready(function() {
+		$("#loadimg").click(function() {
+			$('<img src="' + $("#imagePath").val() + '">').load(function() {
+				$(this).appendTo('#div4');
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div>
+   <div id="header">
+     </div>	
+	<div id="mainDiv">
+	<div>
+	<form id="form" action="#" method="post">
+	<table>
+	<tr><td>
+	<input id="fr" name="products" type="radio" value="fr "/><input type="hidden" name="_products" value="on"/>
+	<label for="fr">SE (11000)</label>
+	<input id="milk" name="products" type="radio" value="Milk"/><input type="hidden" name="_products" value="on"/>
+	<label for="milk">SE/SL(13000)</label>
+	<input id="vodka" name="products" type="radio" value="Vodka"/><input type="hidden" name="_products" value="on"/>
+	<label for="vodka">SE/FL(14500)</label>
+	</td></tr>
+	</table>
+	<table>
+	<tr><a class="btn" href="..\jqEx - Copy\page1.html">NEXT</a></td></tr>
+	</table>
+	</form>
+</div>
+<div>
+<div id="accordion">
+  <h3>COMFORT/CONVENIENCE</h3>
+  <div>
+    <p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+    </p>
+  </div>
+  <h3>LIGHTING</h3>
+  <div>
+    <p>
+       <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+      <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+</p>
+  </div>
+</div>
+		<div id="footer">
+		   Enterprise Applications - Department of Mathematics and Computer Science - University of Calabria - Arcavacata di Rende (CS) - Italy
+		      </div>
+</body>
+</html>
