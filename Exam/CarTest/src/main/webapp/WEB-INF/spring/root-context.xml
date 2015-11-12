@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<bean id="Dealership" class="it.unical.cartest.model.Dealership"/>
+	<bean id="ColorManager" class="it.unical.cartest.model.ColorManager"/>
+	
+	<bean id="Purchase" class="it.unical.cartest.model.Purchase" />
+	
+	<bean id="Selection" class="it.unical.cartest.model.Selection" scope="prototype" />
+	<bean id="Bill" class="it.unical.cartest.model.Bill" scope="prototype"/>
+	
+</beans>

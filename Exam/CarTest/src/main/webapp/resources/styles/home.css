@@ -1,0 +1,66 @@
+
+
+.container {
+	
+	margin: 20px auto;
+	width: 90%;
+	height: 500px;
+	
+}
+
+.header {
+	
+	color: white;
+	height: 200px;
+	background-image: url("/resources/imgs/unical.png");
+}
+
+
+
+.content {
+	
+	height: 80%;
+	background-color: #D1D0D2;
+}
+
+
+.footer {
+	
+	font-size: x-small;
+	height: 13px;
+	background-color: #838283;
+	padding: 3px 3px 3px 3px;
+}
+
+
+#accordionContent {
+	
+	margin-top: 10px;
+}
+
+
+.preview {
+	
+	height: 250px;
+}
+
+table {
+	
+	margin: 0px auto;
+	text-align: center;
+	border: 1px solid;
+	border-color: white;
+}
+
+
+#cart {
+
+	background-color: #4497FF;
+	color: white;
+}
+
+#price {
+	
+	background-color: #4497FF;
+}
+
