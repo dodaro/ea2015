@@ -1,0 +1,38 @@
+body{	
+	font: 75% "Trebuchet MS", sans-serif;	
+	background: #FFFFFF;
+	width: 900px;
+	height: 650px;
+}
+
+#header{	
+	background: #F0F0F0;
+	height: 200px;
+	width: 900px;
+	background-image: url("../Images/Banner.png");
+}
+
+footer{ 
+	background: #838283;
+	height: 20px;
+	width: 900px;
+	text-indent: 10px;
+}
+
+.button{	
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    font: 40% "Trebuchet MS", sans-serif;
+}
+
+#subP{
+	clear: left;
+}
+#details{
+	width: 900px;
+	height: 400px;
+}
