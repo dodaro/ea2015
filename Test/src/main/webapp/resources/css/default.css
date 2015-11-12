@@ -1,0 +1,60 @@
+#container {
+	float:left;
+}
+
+.central {
+	
+	margin-left: 500px;
+	margin-right: 300px;	
+}
+
+#buttons{
+	
+	clear: none;
+}
+
+h1 {
+	
+	color: white;
+}
+
+table, td, th {
+    border: 1px solid green;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+
+/* layout */
+
+
+#header {
+	color: white;
+	text-align: center;
+	padding: 5px;
+	background: #2E2E2E;
+	width: 99%;
+	height: 200px;
+	margin-top: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	text-shadow: 1px 1px 7px rgba(150, 150, 150, 1);
+	border-style: solid;
+	border-width: 1px;
+	background-image: url("/resources/images/unical.png");
+}
+
+#section {
+	width: 100%;
+	padding: 10px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}

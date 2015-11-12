@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<bean id="Choice" class="it.unical.example.model.Choice" scope="prototype">
+	</bean>
+	
+	<bean id="Store" class="it.unical.example.model.Store" scope="prototype">
+		<property name="products">
+			<list value-type="it.unical.example.model.Product">
+				<ref bean="Product1"/>
+				<ref bean="Product2"/>
+				<ref bean="Product3"/>
+			</list>
+		</property>
+		<property name="colors">
+			<list value-type="it.unical.example.model.Product">
+				<ref bean="Color1"/>
+				<ref bean="Color2"/>
+				<ref bean="Color3"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="Product1" class="it.unical.example.model.Product">
+		<property name="name" value="product1" />
+		<property name="price" value="2" />
+	</bean>
+	
+	<bean id="Product2" class="it.unical.example.model.Product">
+		<property name="name" value="product2" />
+		<property name="price" value="4" />
+	</bean>
+	
+	<bean id="Product3" class="it.unical.example.model.Product">
+		<property name="name" value="product3" />
+		<property name="price" value="6" />
+	</bean>
+	
+	<!-- COLORS -->
+	<bean id="Color1" class="it.unical.example.model.Product">
+		<property name="name" value="color1" />
+		<property name="price" value="2" />
+	</bean>
+	
+	<bean id="Color2" class="it.unical.example.model.Product">
+		<property name="name" value="color2" />
+		<property name="price" value="4" />
+	</bean>
+	
+	<bean id="Color3" class="it.unical.example.model.Product">
+		<property name="name" value="color3" />
+		<property name="price" value="6" />
+	</bean>
+	
+	
+</beans>
