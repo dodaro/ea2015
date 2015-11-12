@@ -1,0 +1,83 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="./script/jquery-ui-1.11.4/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./style/myStyle.css">
+<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>
+
+<script>
+	$(document).ready(function() {
+		var div = $(".opacityAnimation");
+		div.animate({
+			opacity : '0.0'
+		}, "slow");
+		div.animate({
+			opacity : '0.5'
+		}, "slow");
+		div.animate({
+			opacity : '1'
+		}, "slow");
+	});
+
+	$(document).ready(function() {
+		$("#hideButton").click(function() {
+			$("#firstDiv").addClass("noDisplay");
+		});
+	});
+
+	$(document).ready(function() {
+		$("#loadImageButton").click(function() {
+			$('<img src="' + $("#imagePath").val() + '">').load(function() {
+				$(this).appendTo('#fourthDiv');
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div id="mainDiv">
+		<div class="widgetDiv">
+			<div id="firstDiv" class="subWidgetDiv">
+				<h1>This is the div1!</h1>
+				<p>You can use this div to store some information</p>
+				<button id="hideButton" class="button small orange opacityAnimation">Click
+					to hide this div1</button>
+			</div>
+		</div>
+		<div class="widgetDiv">
+			<div id="secondDiv" class="subWidgetDiv">
+				<h1>This is the div2!</h1>
+				<p>Social networks:</p>
+				<button class="button small orange opacityAnimation">
+					<a href="https://twitter.com/">Twitter</a>
+				</button>
+				<button class="button small orange opacityAnimation">
+					<a href="https://www.facebook.com/">Facebook</a>
+				</button>
+
+			</div>
+		</div>
+		<div class="widgetDiv">
+			<div id="thirdDiv" class="subWidgetDiv">
+				<h1>This is the div3!</h1>
+				<p>Add a link to an image:</p>
+				<form>
+					<input id="imagePath" class="opacityAnimation" type="text"
+						name="imageLink" />
+				</form>
+				<button id="loadImageButton"
+					class="button small orange opacityAnimation">Click to add
+					the image in div4!</button>
+			</div>
+		</div>
+		<div class="widgetDiv">
+			<div id="fourthDiv" class="subWidgetDiv">
+				<h1>This is the div4!</h1>
+				<p>This div will contains the image loaded by div3</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
