@@ -41,7 +41,7 @@
 	<form:checkbox id="milk" path="products" value="Milk"/>
 	<label for="milk">Milk (2 euro)</label>
 	<form:checkbox id="vodka" path="products" value="Vodka"/>
-	<label for="vodka">Vodka (10 euro)</label>
+	<label for="vodka"> Vodka (10 euro)</label>
 	</td></tr>
 	<tr><td>Add money here: <form:input path="insertedMoney" /></td></tr>
 	<tr><td>${result}</td></tr>
