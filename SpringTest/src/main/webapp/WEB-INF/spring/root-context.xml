@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="auto1" class="com.alessandrocozza.model.Car">
+		<constructor-arg name="brand" value="Audi" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="model" value="TT" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="30000" type="float"></constructor-arg>		
+		<constructor-arg name="info1" value="Info1 Audi TT" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info2" value="Info2 Audi TT" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info3" value="Info3 Audi TT" type="java.lang.String"></constructor-arg>
+	</bean>
+	
+	<bean id="auto2" class="com.alessandrocozza.model.Car">
+		<constructor-arg name="brand" value="Fiat" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="model" value="Panda" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="8000" type="float"></constructor-arg>
+		<constructor-arg name="info1" value="Info1 Fiat Panda" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info2" value="Info2 Fiat Panda" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info3" value="Info3 Fiat Panda" type="java.lang.String"></constructor-arg>
+	</bean>
+	
+	<bean id="auto3" class="com.alessandrocozza.model.Car">
+		<constructor-arg name="brand" value="Ford" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="model" value="Focus" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="16000" type="float"></constructor-arg>
+		<constructor-arg name="info1" value="Info1 Ford Focus" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info2" value="Info2 Ford Focus" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="info3" value="Info3 Ford Focus" type="java.lang.String"></constructor-arg>
+	</bean>
+	
+	<bean id="col1" class="com.alessandrocozza.model.Color">
+		<constructor-arg name="name" value="Green" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="100" type="float"></constructor-arg>
+	</bean>
+	
+	<bean id="col2" class="com.alessandrocozza.model.Color">
+		<constructor-arg name="name" value="White" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="1000" type="float"></constructor-arg>
+	</bean>
+	
+	<bean id="col3" class="com.alessandrocozza.model.Color">
+		<constructor-arg name="name" value="Black" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="800" type="float"></constructor-arg>
+	</bean>
+	
+	<bean id="col4" class="com.alessandrocozza.model.Color">
+		<constructor-arg name="name" value="Red" type="java.lang.String"></constructor-arg>
+		<constructor-arg name="value" value="500" type="float"></constructor-arg>
+	</bean>
+	
+	<bean id="ApplicationController" class="com.alessandrocozza.model.ApplicationController">
+		<constructor-arg>
+	        <list>
+	           <ref bean="auto1"/>
+	           <ref bean="auto2"/>
+	           <ref bean="auto3"/>
+	        </list>
+    	</constructor-arg>
+    	<constructor-arg>
+	        <list>
+	           <ref bean="col1"/>
+	           <ref bean="col2"/>
+	           <ref bean="col3"/>
+	           <ref bean="col4"/>
+	        </list>
+    	</constructor-arg>
+	</bean>
+			
+</beans>

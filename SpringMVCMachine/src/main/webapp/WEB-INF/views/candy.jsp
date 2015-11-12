@@ -12,7 +12,7 @@
 <form:form action="candy" method="post" commandName="user">
 	<c:forEach items="${candiesList}" var="candy">
 		<p> 
-			<form:checkbox path="selectedCandies" value="${candy.value}" label="${candy.name}" />
+			<form:checkbox path="selectedCandies" value="${candy.name}" label="${candy.name}" />
 			(<c:out value="${candy.value}" />$) 
 		</p>
 	</c:forEach>   	

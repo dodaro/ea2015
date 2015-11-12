@@ -1,9 +1,11 @@
 package com.alessandrocozza.model;
 
+import java.util.Set;
+
 public class User 
 {
 	private float money;
-	private float[] selectedCandies;
+	private Set<Candy> selectedCandies;
 
 	public User()
 	{
@@ -11,12 +13,12 @@ public class User
 		selectedCandies = null;
 	}	
 
-	public float[] getSelectedCandies() 
+	public Set<Candy> getSelectedCandies() 
 	{
 		return selectedCandies;
 	}
 
-	public void setSelectedCandies(float[] selectedCandies) 
+	public void setSelectedCandies(Set<Candy> selectedCandies) 
 	{
 		this.selectedCandies = selectedCandies;
 	}
