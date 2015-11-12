@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<bean id="1" class="it.fmaida.model.SimpleCar">
+		<property name="label" value="SE"></property>
+		<property name="name" value="SE"></property>
+		<property name="price" value="11000"></property>
+	</bean>		
+	<bean id="2" class="it.fmaida.model.SimpleCar">
+		<property name="label" value="SE A/L"></property>
+		<property name="name" value="SEA"></property>
+		<property name="price" value="12400"></property>
+	</bean>		
+	<bean id="3" class="it.fmaida.model.SimpleCar">
+		<property name="label" value="SL"></property>	
+		<property name="name" value="SL"></property>
+		<property name="price" value="15000"></property>
+	</bean>	
+	
+	<bean id="carsList" class="it.fmaida.model.CarsList">
+		<property name="cars">
+			<list value-type="it.fmaida.model.SimpleCar">
+				<ref bean="1"/>
+				<ref bean="2"/>
+				<ref bean="3"/>
+			</list>			
+		</property>
+	</bean>
+	
+	
+	<bean id="colorsList" class="it.fmaida.model.AvailableColors">
+		<property name="colors">
+			<list value-type="it.fmaida.model.Color">
+				<ref bean="red"/>
+				<ref bean="black"/>
+				<ref bean="blue"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="red" class="it.fmaida.model.Color">
+		<property name="name" value="red"></property>
+		<property name="price" value="2000"></property>
+	</bean>
+	<bean id="black" class="it.fmaida.model.Color">
+		<property name="name" value="black"></property>
+		<property name="price" value="1000"></property>
+	</bean>
+	<bean id="blue" class="it.fmaida.model.Color">
+		<property name="name" value="blue"></property>
+		<property name="price" value="3000"></property>
+	</bean>
+	
+	
+		
+</beans>

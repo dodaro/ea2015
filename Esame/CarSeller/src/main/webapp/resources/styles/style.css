@@ -1,0 +1,52 @@
+html {
+	width:100%;
+	height: 100%;
+}
+
+
+body {
+	width: 100%;
+	height: 100%;
+	font: 100% "Trebuchet MS", sans-serif;
+}
+
+.container {
+	margin-top: 50px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+}
+
+div {
+	margin-top: 30px;
+	width: 100%;
+}
+
+#banner {
+	width: 100%;
+}
+
+
+.footer {
+	margin-top:100px;
+	background-color: grey;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, th, td {
+   text-align: center;
+   border: 3px solid black;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+th {
+	background-color: blue;
+}
+
