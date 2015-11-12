@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: sans-serif;
+}
+
+#container {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content {
+	background-color: #AAAAAA
+}
+
+
+.buttons-container {
+	margin-bottom: 10px;
+}
+
+form {
+	margin: 0;
+}
+
+#footer {
+	background-color: #555555;
+	font-size: 75%;
+	padding: 5px;
+}

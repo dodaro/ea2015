@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+#summary-table {
+	border: 1px solid #FFFFFF;
+	margin: 0 auto 0 auto;
+	font-size: 90%;
+}
+
+#summary-table td {
+	padding: 2px;
+}
+
+#summary-table .table-label {
+	font-weight: bold;
+}
+
+#summary-table .highlited {
+	background-color: #16A5FF;
+}
