@@ -13,6 +13,7 @@
 	$(document).ready(function() {
 		$("#button").button();
 		$("#show").button();
+		$("#popup").button();
 	});
 	
 	$(document).ready(function() {
@@ -20,10 +21,17 @@
 	});
 	
 	$(document).ready(function() {
-		$('#show').on('click', function() {
-			var v = $("input[type=checkbox]:checked", "#form").val();
-			alert(v);
+		$("#show").on(
+			"click", function() {
 			$("#result").load("<c:url value='/resources/info.html' />");						
+		});
+	});
+	
+	$(document).ready(function() {
+		$("#popup").on(
+			"click",function() {
+			var v = $(":checkbox:checked").val();
+			alert(v);
 		});
 	});
 </script>
@@ -33,27 +41,35 @@
 	Welcome!
 </h1>
 	<div id="content">
-	<form:form id="form" action="#" method="post" commandName="buy">
-	<table>
-	<tr><td>
-	<form:checkbox id="coffee" path="products" value="Coffee"/>
-	<label for="coffee">Coffee (1 euro)</label>
-	<form:checkbox id="milk" path="products" value="Milk"/>
-	<label for="milk">Milk (2 euro)</label>
-	<form:checkbox id="vodka" path="products" value="Vodka"/>
-	<label for="vodka">Vodka (10 euro)</label>
-	</td></tr>
-	<tr><td>Add money here: <form:input path="insertedMoney" /></td></tr>
-	<tr><td>${result}</td></tr>
-	</table>
-	<table>
-	<tr><td><input id="button" type="submit" name="ComputeChange" value="Buy" /></td></tr>
-	</table>
-	</form:form>
-	<button id="show">Show</button>
+		<form:form id="form" action="#" method="post" commandName="buy">
+			<table>
+				<tr>
+					<td><form:checkbox id="coffee" path="products" value="Coffee" />
+						<label for="coffee">Coffee (1 euro)</label> 
+						<form:checkbox id="milk" path="products" value="Milk" /> 
+						<label for="milk">Milk (2 euro)</label> 
+						<form:checkbox id="vodka" path="products" value="Vodka" />
+						<label for="vodka">Vodka (10 euro)</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Add money here: <form:input path="insertedMoney" /></td>
+				</tr>
+				<tr>
+					<td>${result}</td>
+				</tr>
+				<tr>
+					<td><input id="button" type="submit" name="ComputeChange"
+						value="Buy" />
+					</td>
+				</tr>
+			</table>
+		</form:form>
+		<button id="show">Show</button>
+		<button id="popup">PopUp</button>
 	</div>
 	<div id="result">
-	<p>Load an external page here</p>
+		<p>Load an external page here</p>
 	</div>
 </body>
 </html>

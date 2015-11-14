@@ -13,7 +13,7 @@ body{
 	background: #F0F0F0;
 	height: 200px;
 	width: 900px;
-	background-image: url("../images/unical.png");
+	background-image: url("/resources/images/unical.png");
 }
 
 #content{
