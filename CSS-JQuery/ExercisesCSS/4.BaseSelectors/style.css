@@ -1,17 +1,30 @@
 /* Universal selector */
- * {color:blue;}
+* {
+	color: blue;
+}
 
-p {font: 12px Verdana}
+p {
+	font: 12px Verdana
+}
 
 .underlined {
-text-decoration: underline;
+	text-decoration: underline;
 }
-.uppercase {text-transform: uppercase;}
 
-#par1 {background: yellow}
+.uppercase {
+	text-transform: uppercase;
+}
 
-h2.underlined {color: red}
+#par1 {
+	background: yellow
+}
+
+h2.underlined {
+	color: red
+}
+
 .uppercase.underlined {
-color:green; 
-text-decoration: underline; 
-text-transform: uppercase}
+	color: green;
+	text-decoration: underline;
+	text-transform: uppercase
+}

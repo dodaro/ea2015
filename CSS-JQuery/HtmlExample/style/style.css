@@ -3,14 +3,14 @@ body{
 }
 
 #wrapper{	
-	background: #FFFFFF;
+	background: #ffff80;
 	margin: 60px auto;
 	width: 900px;
 	height: 984px;
 }
 
 #header{	
-	background: #F0F0F0;
+	background: #80ffff;
 	height: 200px;
 	width: 900px;
 	background-image: url("../images/unical.png");

@@ -1,24 +1,25 @@
 <!-- The order of precedence is: link, @import, style in the head, style on an element -->
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style1.css">
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<link rel="stylesheet" type="text/css" href="style2.css">
 
-		<style> 
-			@import url(style2.css); 
-		</style> 
+<!-- <style>
+@import url(style2.css);
+</style> -->
 
-		<style type="text/css"> 
-			body {
-			  background: #FFFFCC;
-			}
-		</style>
+<style type="text/css">
+body {
+	background: #FFFFCC;
+}
+</style>
 
-	</head>
+</head>
 
-	<body>
-	<h1> Title </h1>
-	<h2> Subtile</h2>
-	<p style="color:red;"> Hello World!</p>
-	</body>
+<body>
+	<h1>Title</h1>
+	<h2>Subtile</h2>
+	<p style="color: red;">Hello World!</p>
+</body>
 
 </html>

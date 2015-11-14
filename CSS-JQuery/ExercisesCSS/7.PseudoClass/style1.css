@@ -1,33 +1,33 @@
 #div1 p:first-child {
-color: red;
-font-weight: bold;
+	color: red;
+	font-weight: bold;
 }
 
 #div2 a:link {
-color: red;
-text-decoration: none;
+	color: red;
+	text-decoration: none;
 }
 
 #div2 a:visited {
-color: blue;
-text-decoration: none;
+	color: blue;
+	text-decoration: none;
 }
 
 #div2 a:hover {
-color: green;
-text-decoration: underline;
+	color: green;
+	text-decoration: underline;
 }
 
 #div2 a:active {
-color: red;
-text-decoration: underline;
+	color: red;
+	text-decoration: underline;
 }
 
 #div3 input:focus {
-background-color: yellow;
+	background-color: yellow;
 }
 
 p:lang(en) {
-font-weight: bold;
-color: green;
+	font-weight: bold;
+	color: green;
 }
