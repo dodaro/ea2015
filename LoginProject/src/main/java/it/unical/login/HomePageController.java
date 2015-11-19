@@ -30,10 +30,6 @@ public class HomePageController {
 			return "redirect:login";
 		model.addAttribute("user", userSes);
 
-		String user = (String) request.getSession().getAttribute("userSession");
-		if (user == null)
-			return "redirect:login";
-		model.addAttribute("user", user);
 		return "userHomePage";
 	}
 
