@@ -1,0 +1,68 @@
+body {
+	font: 80% "Trebuchet MS", sans-serif;
+}
+
+#wrapper {
+	background: #ffff00;
+	margin: 60px auto;
+	height: 784px;
+	width: 900px;
+}
+
+#header {
+	background: #80ffff;
+	height: 200px;
+	width: 900px;
+	background-image: url("../images/unical.png");
+}
+
+#content {
+	background: #d2d0d2;
+	height: 584px;
+	width: 900px;
+	margin: 0px auto;
+}
+
+#footer {
+	background: #838283;
+	height: 20px;
+	width: 900px;
+	text-indent: 10px;
+}
+
+.images {
+	height: 320px;
+	width: 250px;
+}
+
+table, td, th {
+	border: 1px solid white;
+	border-collapse: collapse;
+	text-align: center;
+	margin: auto;
+}
+
+th {
+	background-color: #0080ff;
+	color: white;
+}
+
+tr:last-child {
+	background-color: #0080ff;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 auto;
+	border-bottom: 5px solid #808080;
+}
+.model {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+#hidden {
+	display: none;
+}

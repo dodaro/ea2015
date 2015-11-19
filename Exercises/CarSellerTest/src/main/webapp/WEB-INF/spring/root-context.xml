@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- Root Context: defines shared resources visible to all other web components -->
+  <bean id="model1" class="it.unical.carseller.model.Car">
+    <property name="model" value="SE" />
+    <property name="price" value="11000.0" />
+  </bean>
+  
+  <bean id="model2" class="it.unical.carseller.model.Car">
+    <property name="model" value="SE A/L" />
+    <property name="price" value="12400.0" />
+  </bean>
+  
+  <bean id="model3" class="it.unical.carseller.model.Car">
+    <property name="model" value="SL" />
+    <property name="price" value="15000.0" />
+  </bean>
+  
+</beans>

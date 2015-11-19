@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Divisione a quattro</title>
+<link rel="stylesheet" type="text/css" href="./script/jquery-ui-1.11.4/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./style/styleTab.css" />
+<script src="./script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="./script/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button").button();
+	});
+	
+	$(document).ready(function() {
+		$("#hide").click(function() {
+			$("#div1").hide(1000, function(){
+				$(":hidden").show(1000);
+			});
+		});
+	});
+	
+	$(document).ready(function(){
+	    $("#face").click(function(){
+	    	window.open("http://www.facebook.com", '_blank');
+	    });
+	});
+	
+	$(document).ready(function(){
+	    $("#twit").click(function(){
+	    	window.open("http://www.twitter.com", '_blank');
+	    });
+	});
+	
+// 	$(document).ready(function(){
+// 	    $("#imgLoad").click(function(){
+// 	    	$imgLink = '<img src="' + $("#urlImage").val() + '">';
+// 	        $("#div4").load($imgLink);
+// 	    });
+// 	});
+	
+	$(document).ready(function(){
+		$("#imgLoad").click(function() {
+			$imgLink = '<img src="' + $("input[id=urlImage]").val() + '" class="image">';
+			$("#div4").addClass("divImage");
+		    $("#div4").html($imgLink);
+		});
+	});	
+</script>
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<header id="header"> </header>
+		<!-- .header-->
+
+		<div id="content" class="table">
+			<div class="row">
+				<div class="cell" id="div1">
+					<h2>This is the div1!</h2>
+					<p>You can use this div to store some information</p>
+					<p><button id="hide">Click to hide this div1</button></p>
+				</div>
+				<div class="cell" id="div2">
+					<h2>This is the div2!</h2>
+					<p>Social networks:</p>
+					<p>	<button id="twit">Twitter</button>
+						<button id="face">Facebook</button>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell" id="div3">
+					<h2>This is the div3!</h2>
+					<p>Add a link to an image:</p>
+					<p>	<input type="text" id="urlImage" value="./images/iphone.png"><br>
+						<button id="imgLoad">Click to add the image in div4!</button>	
+					</p>
+					
+				</div>
+				<div class="cell" id="div4">
+					<h2>This is the div4!</h2>
+					<p>This div will contain the image loaded by div3</p>
+				</div>
+			</div>
+		</div>
+		<!-- .content -->
+
+		<footer id="footer"> </footer>
+		<!-- .footer -->
+
+	</div>
+	<!-- .wrapper -->
+
+</body>
+</html>
