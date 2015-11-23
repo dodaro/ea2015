@@ -4,9 +4,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/resources/style/styleArt.css">
-<link rel="stylesheet" type="text/css" href="/resources/script/jquery-ui-1.11.4/jquery-ui.css">
-<script src="/resources/script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
-<script src="/resources/script/jquery-ui-1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/lib/jquery-ui-1.11.4/jquery-ui.css">
+<script src="/resources/lib/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="/resources/lib/jquery-ui-1.11.4/jquery-ui.js"></script>
 <script>
 
 </script>

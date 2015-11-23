@@ -4,13 +4,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/resources/style/styleArt.css">
-<link rel="stylesheet" type="text/css" href="/resources/script/jquery-ui-1.11.4/jquery-ui.css">
-<script src="/resources/script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
-<script src="/resources/script/jquery-ui-1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/lib/jquery-ui-1.11.4/jquery-ui.css">
+<script src="/resources/lib/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="/resources/lib/jquery-ui-1.11.4/jquery-ui.js"></script>
 <script>
 	$(document).ready(function() {
 		$("#form :radio:first").prop('checked', true);
-		$("#listart").load("<c:url value='/resources/se.html' />");
+		$("#listart").load("<c:url value='/resources/description/se.html' />");
 	});
 
 	$(document).ready(function() {
@@ -21,23 +21,16 @@
 		$("#form :radio").click(function() {
 			if ($(this).is(':checked')) {
 				var ck = $(this).val();
-					if (ck == "SE") {
-						$("#listart").load("<c:url value='/resources/se.html' />");
+					if (ck == "1") {
+						$("#listart").load("<c:url value='/resources/description/se.html' />");
 					} 
-					else if (ck == "SE A/L") {
-						$("#listart").load("<c:url value='/resources/sea.html' />");
+					else if (ck == "2") {
+						$("#listart").load("<c:url value='/resources/description/sea.html' />");
 					} 
-					else if (ck == "SL") {
-						$("#listart").load("<c:url value='/resources/sl.html' />");
+					else if (ck == "3") {
+						$("#listart").load("<c:url value='/resources/description/sl.html' />");
 					}
 			}
-		});
-	});
-
-
-	$(document).ready(function() {
-		$("#slide-up").click(function() {
-			$("#hidden").slideUp("slow");
 		});
 	});
 	
@@ -51,9 +44,8 @@
 		<div id="content">
 
 			<h1>Choose your model!</h1>	
-			<form:form id="form" method="POST" action="#" commandName="response">
-				<form:radiobuttons path="modelChoosed" items="${carsList}"
-					itemValue="model" />
+			<form:form id="form" method="POST" action="color" commandName="carIndex">
+				<form:radiobuttons path="response" items="${cars.carMap}"/>
 				<p>
 					<input type="submit" name="change" value="Next" />
 				</p>

@@ -4,13 +4,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/resources/style/styleArt.css">
-<link rel="stylesheet" type="text/css" href="/resources/script/jquery-ui-1.11.4/jquery-ui.css">
-<script src="/resources/script/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
-<script src="/resources/script/jquery-ui-1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/lib/jquery-ui-1.11.4/jquery-ui.css">
+<script src="/resources/lib/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="/resources/lib/jquery-ui-1.11.4/jquery-ui.js"></script>
 <script>
 	$(document).ready(function() {
 		$("#form :radio:first").prop('checked', true);
-		$(".picture").html('<img class="model" src="/resources/models/blueF.jpg" alt="blueCar">');
+		$(".picture").html('<img class="model" src="/resources/images/blueF.jpg" alt="blueCar">');
 		 
 	});
 	
@@ -22,14 +22,14 @@
 		$("#form :radio").click(function() {
 			if ($(this).is(':checked')) {
 				var ck = $(this).val();
-					if (ck == "Blue") {
-						$(".picture").html('<img class="model" src="/resources/models/blueF.jpg" alt="blueCar">');
+					if (ck == "1") {
+						$(".picture").html('<img class="model" src="/resources/images/blueF.jpg" alt="blueCar">');
 					} 
-					else if (ck == "Red") {
-						$(".picture").html('<img class="model" src="/resources/models/redF.jpg" alt="redCar">');
+					else if (ck == "2") {
+						$(".picture").html('<img class="model" src="/resources/images/redF.jpg" alt="redCar">');
 					} 
-					else if (ck == "Yellow") {
-						$(".picture").html('<img class="model" src="/resources/models/yellowF.jpg" alt="yellowCar">');
+					else if (ck == "3") {
+						$(".picture").html('<img class="model" src="/resources/images/yellowF.jpg" alt="yellowCar">');
 					}
 			}
 		});
@@ -44,10 +44,8 @@
 
 		<div id="content">
 			<h1>Choose your color!</h1>
-			<form:form id="form" method="POST" action="#" commandName="userResponse">
-				<form:radiobutton path="colorChoosed" value="Blue" label="Blue (100)"/>
-				<form:radiobutton path="colorChoosed" value="Red" label="Red (200)"/>
-				<form:radiobutton path="colorChoosed" value="Yellow" label="Yellow (300)"/>		
+			<form:form id="form" method="POST" action="summary" commandName="colorIndex">
+				<form:radiobuttons path="response" items="${colors.colorMap}" />		
 						
 			<p>
 				<input type="submit" name="change" value="Next" />

@@ -4,6 +4,41 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <!-- Root Context: defines shared resources visible to all other web components -->
+  <bean id="carsChooser" class="it.unical.carseller.model.CarsChooser">
+    <property name="carMap">
+      <map>
+        <entry key="1" value-ref="model1"/>
+        <entry key="2" value-ref="model2"/>
+        <entry key="3" value-ref="model3"/>
+      </map>
+    </property>  
+  </bean>
+  
+  <bean id="colorsChooser" class="it.unical.carseller.model.ColorsChooser">
+    <property name="colorMap">
+      <map>
+        <entry key="1" value-ref="blue"/>
+        <entry key="2" value-ref="red"/>
+        <entry key="3" value-ref="yellow"/>
+      </map>
+    </property>  
+  </bean>
+  
+  <bean id="blue" class="it.unical.carseller.model.Color">
+    <property name="name" value="Blue" />
+    <property name="price" value="100.0" />
+  </bean>
+  
+  <bean id="red" class="it.unical.carseller.model.Color">
+    <property name="name" value="Red" />
+    <property name="price" value="200.0" />
+  </bean>    
+  
+  <bean id="yellow" class="it.unical.carseller.model.Color">
+    <property name="name" value="Yellow" />
+    <property name="price" value="350.0" />
+  </bean>      
+  
   <bean id="model1" class="it.unical.carseller.model.Car">
     <property name="model" value="SE" />
     <property name="price" value="11000.0" />
@@ -18,5 +53,7 @@
     <property name="model" value="SL" />
     <property name="price" value="15000.0" />
   </bean>
+  
+  <bean id="response" class="it.unical.carseller.model.Response" scope="prototype"/>
   
 </beans>
