@@ -34,11 +34,34 @@ public class ColorController {
 	}
 	
 	@RequestMapping(value = "/color", method = RequestMethod.POST)
-	public String colorControllerPost(@ModelAttribute("carIndex") Response res, Model model) {	
+	public String colorControllerPost(@ModelAttribute("carIndex") Response rr, Model model) {	
 		logger.info("Start Post Color");
+		
+	/*	System.out.println("--- Model data ---");
+		Map modelMap = model.asMap();
+		for (Object modelKey : modelMap.keySet()) {
+			Object modelValue = modelMap.get(modelKey);
+			System.out.println(modelKey + " -- " + modelValue);
+		}*/
+
+		
+		if(!model.containsAttribute("cars")) {
+		      logger.info("Modello NON contiene cars");
+		    }
+		else
+			  logger.info("Modello CONTIENE cars");
+			
+		/*System.out.println("=== Request data ===");
+		java.util.Enumeration reqEnum = request.getAttributeNames();
+		while (reqEnum.hasMoreElements()) {
+			String s = (String)reqEnum.nextElement();
+			System.out.println(s);
+			System.out.println("==" + request.getAttribute(s));
+		}*/
 		CarsChooser cars = context.getBean("carsChooser", CarsChooser.class);
+		logger.info("Indice Car scelto " + rr.getResponse());
+		cars.setMyCar(rr.getResponse());
 		ColorsChooser colors = context.getBean("colorsChooser", ColorsChooser.class);
-		cars.setMyCar(res.getResponse());
 		model.addAttribute("colors", colors);
 		model.addAttribute("colorIndex", context.getBean("response", Response.class));
 		return "color";
