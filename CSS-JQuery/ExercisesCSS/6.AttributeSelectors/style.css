@@ -1,0 +1,17 @@
+/* select all elements that have a title*/
+a[title] {color: blue;}
+
+/* select all elements that have title "Title1"*/
+a[title="Title1"] {color: red;}
+
+/* select all elements whose title contains the word title2*/
+a[title~="title2"] {color: purple;}
+
+/* select all elements whose title starts with title3*/
+a[title^="title3"] {color: green;}
+
+/* select all elements whose title ends with title3*/
+a[title$="title3"] {color: fuchsia;}
+
+/* select all elements whose title contains title4*/
+a[title*="title4"] {color: maroon;}
