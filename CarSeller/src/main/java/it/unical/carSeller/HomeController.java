@@ -40,8 +40,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/",method = RequestMethod.POST)
-	public String home(Model model, HttpServletRequest request,@ModelAttribute("sellerForm") Sell sell){
-		model.addAttribute("sell",sell);		
+	public String home(Model model, HttpServletRequest request,@ModelAttribute("sellerForm") Sell sell){		
+		System.out.println(String.valueOf(sell.getCar()));
 		request.getSession().setAttribute("car", sell.getCar());	
 		return "redirect:/color";
 	}

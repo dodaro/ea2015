@@ -15,7 +15,9 @@
 	$(document).ready(function() {
 		$("#sub").button();
 	});
-	
+	$(document).ready(function() {
+		$("#radios").buttonset();
+	});
 
 	$(document).ready(function() {
 		$("#form input").on('change', function() {
@@ -35,11 +37,11 @@
 		<form:form id="form" modelAttribute="sell" method="post"
 			commandName="colorForm">
 			<p id="radios">
-				<form:radiobutton id="SE" path="color" value="RED" />
+				<form:radiobutton id="RED" path="color" value="RED" />
 				<label for="RED">RED (300 euro)</label>
-				<form:radiobutton id="SL" path="color" value="BLUE" />
+				<form:radiobutton id="BLUE" path="color" value="BLUE" />
 				<label for="BLUE">BLUE (500 euro)</label>
-				<form:radiobutton id="SEA" path="color" value="GREEN" />
+				<form:radiobutton id="GREEN" path="color" value="GREEN" />
 				<label for="GREEN">GREEN (450 euro)</label>
 			</p>
 			<p id="subP">

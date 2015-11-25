@@ -23,7 +23,6 @@ public class ColorController {
 	
 	@RequestMapping(value = "/color", method = RequestMethod.GET)
 	public String color(Locale locale,@ModelAttribute("colorForm") Sell sell, Model model,HttpServletRequest request) {
-		model.addAttribute("sell",context.getBean("Sell"));
 		System.out.println(request.getSession().getAttribute("car"));
 		return "color";
 	}

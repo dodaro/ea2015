@@ -30,6 +30,15 @@
 			$("#details").load("/WEB-INF/views/" + page);
 		});
 	});
+	
+	$(document).ready(function() {
+		$("#sub").on('click', function() {
+
+			var selected = $("#form input[type=radio]:checked");
+			alert(selected.val());
+			
+		});
+	});
 </script>
 </head>
 <body>
@@ -40,8 +49,10 @@
 			<p id="radios">
 				<form:radiobutton id="SE" path="car" value="SE" />
 				<label for="SE">SE (15000 euro)</label>
+				
 				<form:radiobutton id="SL" path="car" value="SL" />
-				<label for="SEA">SL (12400 euro)</label>
+				<label for="SL">SL (12400 euro)</label>
+				
 				<form:radiobutton id="SEA" path="car" value="SEA" />
 				<label for="SEA">SEA (11000 euro)</label>
 			</p>
