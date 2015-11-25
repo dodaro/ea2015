@@ -104,4 +104,12 @@ public class PersistenceTest {
 		shopDAO.delete(shops.get(1));
 		assertEquals(9, shopDAO.numberOfTuple());
 	}
+	
+	@Test
+	public void testUpdateProduct(){
+		products.get(0).setCategory("Electronics");
+		Integer code=products.get(0).getCode();
+		productDAO.update(products.get(0));
+		assertEquals("Electronics", ((Product)productDAO.getById(code)).getCategory());
+	}
 }
