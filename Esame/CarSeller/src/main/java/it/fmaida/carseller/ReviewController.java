@@ -56,7 +56,7 @@ public class ReviewController {
 		String color = userChoice.getColor();
 		logger.info(color);
 		
-		int newTotalPrice = choiceFromSession.getTotalPrice();
+		int newTotalPrice = choiceFromSession.getTotalPrice();	
 		
 		AvailableColors colors = (AvailableColors) context.getBean("colorsList");
 		Color currentColor = colors.findColorByName(color);
