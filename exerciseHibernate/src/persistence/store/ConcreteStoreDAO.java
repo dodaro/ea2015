@@ -14,23 +14,18 @@ import org.hibernate.type.StringType;
 import persistence.product.ConcreteProductDAO;
 import persistence.product.Product;
 import persistence.product.ProductDAO;
+import persistence.utils.DBHandler;
 
 
 public class ConcreteStoreDAO implements StoreDAO{
-
-	private static SessionFactory factory;
 	
 	public ConcreteStoreDAO() {
-		Configuration configuration = new Configuration().configure();
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties());
-		factory = configuration.buildSessionFactory(builder.build());
 	}
 	
 	@Override
 	public Store find(long id) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Store store = (Store) session.createSQLQuery("SELECT * FROM stores where id = " + id).addEntity(Store.class)
 				.uniqueResult();
 		session.close();
@@ -41,7 +36,7 @@ public class ConcreteStoreDAO implements StoreDAO{
 	@Override
 	public void create(Store store) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -59,7 +54,7 @@ public class ConcreteStoreDAO implements StoreDAO{
 	@Override
 	public void update(Store store) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -78,7 +73,7 @@ public class ConcreteStoreDAO implements StoreDAO{
 	@Override
 	public void delete(Store store) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();

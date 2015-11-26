@@ -9,22 +9,19 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.type.LongType;
 
+import persistence.utils.DBHandler;
+
 
 public class ConcreteProductDAO implements ProductDAO{
 
-	private static SessionFactory factory;
 	
 	public ConcreteProductDAO() {
-		Configuration configuration = new Configuration().configure();
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties());
-		factory = configuration.buildSessionFactory(builder.build());
 	}
 	
 	@Override
 	public Product find(long id) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Product product = (Product) session.createSQLQuery("SELECT * FROM products where id = " + id).addEntity(Product.class)
 				.uniqueResult();
 		session.close();
@@ -35,7 +32,7 @@ public class ConcreteProductDAO implements ProductDAO{
 	@Override
 	public void create(Product product) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -53,7 +50,7 @@ public class ConcreteProductDAO implements ProductDAO{
 	@Override
 	public void updateProduct(Product product) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -72,7 +69,7 @@ public class ConcreteProductDAO implements ProductDAO{
 	@Override
 	public void delete(Product product) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -91,7 +88,7 @@ public class ConcreteProductDAO implements ProductDAO{
 	@Override
 	public long getStore(long productId) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Long id = (Long) session.createSQLQuery("SELECT store FROM products where id = " + productId).addScalar("store", LongType.INSTANCE)
 				.uniqueResult();
 				
@@ -102,7 +99,7 @@ public class ConcreteProductDAO implements ProductDAO{
 	@Override
 	public List<Product> findAll() {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		@SuppressWarnings("unchecked")
 		List<Product> products = (List<Product>) session.createSQLQuery("SELECT * FROM products").addEntity(Product.class).list();
 				

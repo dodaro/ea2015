@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,11 +26,12 @@ public class Product implements Serializable {
 	@Column(name = "name", length = 255, unique = false, nullable = false)
 	private String name;
 	
-	@Column(name = "price", length = 255, unique = false, nullable = false)
+	@Column(name = "price", nullable = false)
 	private double price;
 	
 	//foreign key (since I have just one store)
-	@Column(name = "store", length = 255, unique = false, nullable = false)
+
+	@JoinColumn(name = "store") //is the same of the @Column (name)
 	private long store;
 
 	public long getId() {

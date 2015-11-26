@@ -9,22 +9,20 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.type.StringType;
 
+import persistence.utils.DBHandler;
+
 
 public class ConcreteUserDAO implements UserDAO{
 
-	private static SessionFactory factory;
 	
 	public ConcreteUserDAO() {
-		Configuration configuration = new Configuration().configure();
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties());
-		factory = configuration.buildSessionFactory(builder.build());
+		
 	}
 	
 	@Override
 	public User find(long id) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		User user = (User) session.createSQLQuery("SELECT * FROM users where id = " + id).addEntity(User.class)
 				.uniqueResult();
 		session.close();
@@ -34,7 +32,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public List<User> getUsers() {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		@SuppressWarnings("unchecked")
 		List<User> users = (List<User>) session.createSQLQuery("SELECT * FROM users").addEntity(User.class).list();
 		session.close();
@@ -44,7 +42,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public String getUsername(long id) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		String username = (String) session.createSQLQuery("SELECT * FROM users where id = " + id).addScalar("username", StringType.INSTANCE)
 				.uniqueResult();
 				
@@ -55,7 +53,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public String getPassword(long id) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		String username = (String) session.createSQLQuery("SELECT * FROM users where id = " + id).addScalar("password", StringType.INSTANCE)
 				.uniqueResult();
 				
@@ -66,7 +64,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public List<User> getUserFromCity(String city) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		@SuppressWarnings("unchecked")
 		List<User> users = (List<User>) session.createSQLQuery("SELECT * FROM users where city = '" + city +"'").addEntity(User.class).list();
 		session.close();
@@ -76,7 +74,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public void create(User user) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -94,7 +92,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public void updateUser(User user) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -122,7 +120,7 @@ public class ConcreteUserDAO implements UserDAO{
 	@Override
 	public void delete(User user) {
 		
-		Session session = factory.openSession();
+		Session session = DBHandler.getFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
