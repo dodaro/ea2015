@@ -1,0 +1,57 @@
+
+
+
+#body 
+}
+
+.button{	
+    margin-left:15px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    min-width: 150px;
+    max-width: 150px;
+    width: 150px;
+    font: 90% "Times New Roman", Times, serif;
+
+
+}
+
+.Div {
+	background:gray;
+	width: 48.5%;
+	height: 40.5%;
+	float: left;
+	margin-left: 1%;
+	margin-bottom: 1%;
+	
+	
+}
+.subDiv {
+	width: 85%;
+	height: 80%;
+	margin-top: 5%;
+	margin-left: 5%;
+	padding-left: 3%; 
+}
+
+h1 {
+	font-size: 2.5em;
+
+
+
+}
+#div4 > img {
+	width: 70%;
+	height: 70%;
+   position: relative;
+    -webkit-animation: mymove 5s infinite;  /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+
+}
+
+
+
+
+
+
+
