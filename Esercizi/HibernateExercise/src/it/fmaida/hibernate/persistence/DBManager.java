@@ -32,7 +32,7 @@ public class DBManager {
 		Configuration configuration = new Configuration().configure();
 		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties());
-		instance.sessionFactory = configuration.buildSessionFactory(builder.build());
+		sessionFactory = configuration.buildSessionFactory(builder.build());
 	}
 	
 	public SessionFactory getSessionFactory() {
