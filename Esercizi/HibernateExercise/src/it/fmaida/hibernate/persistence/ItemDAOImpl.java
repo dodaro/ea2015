@@ -12,71 +12,30 @@ import org.hibernate.cfg.Configuration;
 
 public class ItemDAOImpl implements ItemDAO {
 
-	private static SessionFactory sessionFactory;
+	private DBManager dbManager;
 	
 	public ItemDAOImpl() {
-		Configuration configuration = new Configuration().configure();
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-		sessionFactory = configuration.buildSessionFactory(builder.build());
+		this.dbManager = DBManager.getInstance();
 	}
 	
 	@Override
 	public void createItem(Item item) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.save(item);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-				throw e;
-			}
-		} finally {
-			session.close();
-		}
+		this.dbManager.performOperation(item, DBManager.CREATE);
 	}
 
 	@Override
 	public void delete(Item item) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.delete(item);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-				throw e;
-			}
-		} finally {
-			session.close();
-		}
+		this.dbManager.performOperation(item, DBManager.DELETE);
 	}
 
 	@Override
 	public void updateItem(Item item) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.update(item);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-				throw e;
-			}
-		} finally {
-			session.close();
-		}
+		this.dbManager.performOperation(item, DBManager.UPDATE);
 	}
 
 	@Override
 	public Item getItem(int id) {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		Item item = (Item) session.createSQLQuery("SELECT * FROM Items WHERE id = " + id).addEntity(Item.class).uniqueResult();
 		session.close();
 		return item;
@@ -84,7 +43,7 @@ public class ItemDAOImpl implements ItemDAO {
 
 	@Override
 	public Item getItem(String name) {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		Item item = (Item) session.createSQLQuery("SELECT * FROM Items WHERE name = '" + name + "'" ).addEntity(Item.class).uniqueResult();
 		session.close();
 		return item;
@@ -92,7 +51,7 @@ public class ItemDAOImpl implements ItemDAO {
 
 	@Override
 	public List<Item> getItemsByCategory(String category) {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		List<Item> items = session.createSQLQuery("SELECT * FROM Items WHERE category = '" + category + "'").addEntity(Item.class).list();
 		session.close();
 		return items;
@@ -100,7 +59,7 @@ public class ItemDAOImpl implements ItemDAO {
 
 	@Override
 	public List<Item> getAllItems() {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		List<Item> items = session.createSQLQuery("SELECT * FROM Items").addEntity(Item.class).list();
 		session.close();
 		return items;

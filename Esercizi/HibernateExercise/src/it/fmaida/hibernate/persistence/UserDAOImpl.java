@@ -14,35 +14,20 @@ import org.hibernate.cfg.Configuration;
 
 public class UserDAOImpl implements UserDAO {
 
-	private static SessionFactory sessionFactory;
+	private DBManager dbManager;
 	
 	public UserDAOImpl() {
-		Configuration configuration = new Configuration().configure();
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-		sessionFactory = configuration.buildSessionFactory(builder.build());
+		this.dbManager = DBManager.getInstance();
 	}
 	
 	@Override
 	public void createUser(User user) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.save(user);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-			}
-			throw e;
-		} finally {
-			session.close();
-		}		
+		this.dbManager.performOperation(user, DBManager.CREATE);
 	}
 
 	@Override
 	public User get(Integer id) {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		User user = (User) session.createSQLQuery("SELECT * from Users where id = " + id).addEntity(User.class).uniqueResult();
 		session.close();
 		return user;
@@ -50,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User get(String username) {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		User user = (User) session.createSQLQuery("SELECT * from Users where username = '" + username + "'").addEntity(User.class).uniqueResult();
 		session.close();
 		return user;
@@ -58,44 +43,17 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public void update(User user) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.update(user);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-			}
-			throw e;
-		} finally {
-			session.close();
-		}		
+		this.dbManager.performOperation(user, DBManager.UPDATE);
 	}
 
 	@Override
 	public void delete(User user) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.delete(user);
-			tx.commit();
-		} catch ( Exception e ) {
-			if ( tx != null ) {
-				tx.rollback();
-			}
-			throw e;
-		} finally {
-			session.close();
-		}		
-		
+		this.dbManager.performOperation(user, DBManager.DELETE);
 	}
 
 	@Override
 	public int numberOfUsers() {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		BigInteger n  = (BigInteger) session.createSQLQuery("SELECT count(*) from users").uniqueResult();
 		session.close();
 		return n.intValue();
@@ -103,7 +61,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<User> getUsers() {
-		Session session = sessionFactory.openSession();
+		Session session = dbManager.getSession();
 		List<User> users = session.createSQLQuery("SELECT * FROM users").addEntity(User.class).list();
 		return users;
 	}
