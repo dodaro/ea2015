@@ -1,5 +1,6 @@
 package it.fmaida.hibernate.persistence;
 
+import java.util.Date;
 import java.util.List;
 
 public interface PurchaseDAO {
@@ -17,5 +18,6 @@ public interface PurchaseDAO {
 	
 	public List<Purchase> getAllPurchases();
 	
+	public List<Purchase> getPurchaseInDate(Date date);
 
 }

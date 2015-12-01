@@ -1,6 +1,7 @@
 package it.fmaida.hibernate.persistence;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -36,7 +37,6 @@ public class PurchaseDAOImpl implements PurchaseDAO {
 		Query query = session.createQuery(queryString);
 		query.setParameter("id",id);
 		Purchase purchase = (Purchase) query.uniqueResult();
-		purchase.getItems().size();
 		session.close();
 		return purchase;
 	}
@@ -53,6 +53,17 @@ public class PurchaseDAOImpl implements PurchaseDAO {
 	public List<Purchase> getAllPurchases() {
 		Session session = dbManager.getSession();
 		ArrayList<Purchase> purchases = (ArrayList<Purchase>) session.createQuery("from Purchase").list();
+		session.close();
+		return purchases;
+	}
+
+	@Override
+	public List<Purchase> getPurchaseInDate(Date date) {
+		Session session = dbManager.getSession();
+		String queryString = "FROM Purchase p where p.purchaseDate = :purchase_date";
+		Query query = session.createQuery(queryString);
+		query.setParameter("purchase_date", date);
+		ArrayList<Purchase> purchases = (ArrayList<Purchase>) query.list();
 		session.close();
 		return purchases;
 	}

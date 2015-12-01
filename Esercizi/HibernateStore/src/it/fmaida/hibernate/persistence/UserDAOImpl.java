@@ -38,10 +38,8 @@ public class UserDAOImpl implements UserDAO {
 		Session session = dbManager.getSession();
 		User user = (User) session.createSQLQuery("SELECT * from Users where username = '" + username + "'").addEntity(User.class).uniqueResult();
 		if ( user != null ) {
-			user.getPurchases().size();
-			for ( Purchase curr : user.getPurchases() ) {
-				System.out.println("here");
-				curr.getItems().size();
+			for ( Purchase purchase : user.getPurchases() ) {
+				purchase.getItemPurchases().size();
 			}
 		}
 		session.close();

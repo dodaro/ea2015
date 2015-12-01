@@ -16,5 +16,6 @@
   		<mapping class="it.fmaida.hibernate.persistence.Item"/>
   		<mapping class="it.fmaida.hibernate.persistence.Shop"/>
   		<mapping class="it.fmaida.hibernate.persistence.Purchase"/>
+  		<mapping class="it.fmaida.hibernate.persistence.ItemPurchase"/>
     </session-factory>
 </hibernate-configuration>

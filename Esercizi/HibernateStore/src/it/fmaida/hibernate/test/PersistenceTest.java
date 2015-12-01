@@ -13,6 +13,9 @@ import org.junit.Test;
 import it.fmaida.hibernate.persistence.Item;
 import it.fmaida.hibernate.persistence.ItemDAO;
 import it.fmaida.hibernate.persistence.ItemDAOImpl;
+import it.fmaida.hibernate.persistence.ItemPurchase;
+import it.fmaida.hibernate.persistence.ItemPurchaseDAO;
+import it.fmaida.hibernate.persistence.ItemPurchaseDAOImpl;
 import it.fmaida.hibernate.persistence.Purchase;
 import it.fmaida.hibernate.persistence.PurchaseDAO;
 import it.fmaida.hibernate.persistence.PurchaseDAOImpl;
@@ -29,11 +32,14 @@ public class PersistenceTest {
 	static ItemDAO itemDAO;
 	static ShopDAO shopDAO;
 	static PurchaseDAO purchaseDAO;
+	static ItemPurchaseDAO itemPurchaseDAO;
+	static Date date;
 	
 	static List<User>usersList;
 	static List<Item>itemsList;
 	static List<Shop>shopsList;
 	static List<Purchase>purchasesList;
+	static List<ItemPurchase> itemPurchases;
 	
 	@BeforeClass
 	public static void init() { 
@@ -42,15 +48,15 @@ public class PersistenceTest {
 		itemDAO = new ItemDAOImpl();
 		shopDAO = new ShopDAOImpl();
 		purchaseDAO = new PurchaseDAOImpl();
+		itemPurchaseDAO = new ItemPurchaseDAOImpl();
 		
 		
-		
-		Item item1 = new Item(1, "turtle beach task sentinel", "cuffie", 49.90f);
-		Item item2 = new Item(1, "turtle beach 40p", "cuffie", 50.90f);
-		Item item3 = new Item(1, "turtle beach 50p sentinel", "cuffie", 49.90f);
-		Item item4 = new Item(1, "Tv samsung", "tv", 499.90f);
-		Item item5 = new Item(1, "PS4", "console", 349.90f);
-		Item item6 = new Item(1, "XboxOne", "ps3", 349.90f);
+		Item item1 = new Item(1, "turtle beach task sentinel", "cuffie", 49.90f,null);
+		Item item2 = new Item(1, "turtle beach 40p", "cuffie", 50.90f,null);
+		Item item3 = new Item(1, "turtle beach 50p sentinel", "cuffie", 49.90f,null);
+		Item item4 = new Item(1, "Tv samsung", "tv", 499.90f,null);
+		Item item5 = new Item(1, "PS4", "console", 349.90f,null);
+		Item item6 = new Item(1, "XboxOne", "ps3", 349.90f,null);
 
 		itemDAO.createItem(item1);
 		itemDAO.createItem(item2);
@@ -73,14 +79,49 @@ public class PersistenceTest {
 		userDAO.createUser(user5);
 		userDAO.createUser(user6);
 		
-		ArrayList<Item> user1Items = new ArrayList<>();
-		user1Items.add(item2);
-		user1Items.add(item3);
-		user1Items.add(item4);
+		//Creating purchases
+		Purchase purchase1 = new Purchase(0, user1, null, user1.getBirthDate());
+		Purchase purchase2 = new Purchase(0, user1, null, user1.getBirthDate());
 		
-		Purchase purchase1 = new Purchase(1, user1, user1Items, user1.getBirthDate());
+		//needed in testPurchasesInDate
+		date = user1.getBirthDate();
 		
+		//creating two itemsPurchases per user1
+		ArrayList<ItemPurchase> user1Purchases1 = new ArrayList<>();
+		ArrayList<ItemPurchase> user1Purchases2 = new ArrayList<>();
+		
+		//create three items per first purchases
+		ItemPurchase itemPurchase1 = new ItemPurchase(0, purchase1, item1);
+		ItemPurchase itemPurchase2 = new ItemPurchase(0, purchase1, item2);
+		ItemPurchase itemPurchase3 = new ItemPurchase(0, purchase1, item3);
+		ItemPurchase itemPurchase4 = new ItemPurchase(0, purchase2, item3);
+
+		//add the items for user 1
+		user1Purchases1.add(itemPurchase1);
+		user1Purchases1.add(itemPurchase2);
+		user1Purchases1.add(itemPurchase3);
+		
+		// add the same item for user 1 in itemPurchase2
+		user1Purchases2.add(itemPurchase3);
+		
+		purchase1.setItemPurchases(user1Purchases1);
+		purchase2.setItemPurchases(user1Purchases2);
+		
+		purchaseDAO.create(purchase2);
 		purchaseDAO.create(purchase1);
+				
+		itemPurchaseDAO.create(itemPurchase1);
+		itemPurchaseDAO.create(itemPurchase2);
+		itemPurchaseDAO.create(itemPurchase3);
+		itemPurchaseDAO.create(itemPurchase4);
+		
+		
+		
+		
+		
+//		Purchase purchase1 = new Purchase(0,user1,user1Purchases,user1.getBirthDate());
+		
+//		purchaseDAO.create(purchase1);
 		
 		
 //		shopDAO.create(new Shop(1, "vida chi ti pigli", "cosenza"));
@@ -109,15 +150,14 @@ public class PersistenceTest {
 		int count = 0;
 		List<Purchase> purchases = userDAO.get("Francesco").getPurchases();
 		for ( Purchase curr : purchases ) {
-			//pare non prendere nulla....
-			count += curr.getItems().size();
+			count += curr.getItemPurchases().size();
 		}
-		assertEquals(3,count);
+		assertEquals(4,count);
 	}
 	
 	@Test
 	public void numberOfPurchases() {
-		assertEquals(1,purchaseDAO.getAllPurchases().size());
+		assertEquals(2,purchaseDAO.getAllPurchases().size());
 	}
 	
 
@@ -160,6 +200,18 @@ public class PersistenceTest {
 		shopToEdit.setName(newName);
 		shopDAO.update(shopToEdit);
 		assertEquals(newName, shopDAO.getShop(4).getName());
+	}
+	
+	@Test
+	public void testProductsNumber() {
+		int items = itemDAO.getAllItems().size();
+		assertEquals(6, items);
+	}
+	
+	@Test
+	public void testPurchasesInDate() {
+		int count = purchaseDAO.getPurchaseInDate(date).size();
+		assertEquals(2, count);
 	}
 	
 	
