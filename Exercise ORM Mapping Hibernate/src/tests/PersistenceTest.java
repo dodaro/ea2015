@@ -25,15 +25,14 @@ import persistence.UserDAOImpl;
 public class PersistenceTest {
 
 	static UserDAO userDAO;
-	static int userNumber = 10;
+	static int userNumber = 2;
 	static ProductDAO productDAO;
-	static int productNumber = 100;
+	static int productNumber = 4;
 	static PurchaseDAO purchaseDAO;	
-	static int purchaseNumber = 100;
+	static int purchaseNumber = 4;
 	static List<User> users;
 	static List<Product> products;
 	static List<Purchase> purchases;
-	static boolean dbInitialized = false;
 
 	@BeforeClass
 	static public void init() throws Exception {
@@ -47,11 +46,6 @@ public class PersistenceTest {
 	}
 
 	static public void initDB() throws Exception {
-		if(dbInitialized)
-			return;
-
-		dbInitialized = true;
-
 		for (int i = 0; i < userNumber; i++) {
 			Calendar c = new GregorianCalendar();
 			c.set(Calendar.YEAR, 2000);
@@ -169,13 +163,13 @@ public class PersistenceTest {
 	//	4. Get the list of all products in the database.
 	@Test
 	public void testGetListOfProcuctInDB() {
-		assertEquals(0, productDAO.getProducts().size());
+		assertEquals(products.size(), productDAO.getProducts().size());
 	}
 
 	//	5. Get the list of all users in the database.
 	@Test
 	public void testGetListOfUserInDB() {
-		assertEquals(users.size(), userDAO.getUsers().size());		
+		assertEquals(users, userDAO.getUsers());		
 	}
 
 	//	6. Get the list of all products bought by a user.

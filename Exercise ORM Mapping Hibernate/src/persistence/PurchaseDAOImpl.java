@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class PurchaseDAOImpl implements PurchaseDAO {
@@ -35,24 +36,42 @@ public class PurchaseDAOImpl implements PurchaseDAO {
 	}
 	
 	public Purchase get(Integer id) {
+		//		Session session = DBManager.getSession();
+		//		Purchase purchase = (Purchase) session.createSQLQuery("SELECT * FROM purchases where id = " + id).addEntity(Purchase.class).uniqueResult();
+		//		session.close();
 		Session session = DBManager.getSession();
-		Purchase purchase = (Purchase) session.createSQLQuery("SELECT * FROM purchases where id = " + id).addEntity(Purchase.class).uniqueResult();
+		String queryString = "from purchases where id = :id_purchase";
+		Query query = session.createQuery(queryString);
+		query.setParameter("id_purchase", id);
+		Purchase purchase = (Purchase) query.uniqueResult();
 		session.close();
 		return purchase;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getProductBoughtByUser(User user) {
+		//		Session session = DBManager.getSession();
+		//		List<Product> products = (List<Product>) session.createQuery("from purchases p where p.user = " + user).list();
+		//		session.close();
 		Session session = DBManager.getSession();
-		List<Product> products = (List<Product>) session.createQuery("from purchases p where p.user = " + user).list();
+		String queryString = "from purchases p where p.user = :user_purchase";
+		Query query = session.createQuery(queryString);
+		query.setParameter("user_purchase", user);
+		List<Product> products = (List<Product>) query.uniqueResult();
 		session.close();
 		return products;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Purchase> getPurchasesInDate(Date date) {
+		//		Session session = DBManager.getSession();
+		//		List<Purchase> purchases = (List<Purchase>) session.createQuery("from purchases p where p.date = " + date).list();
+		//		session.close();
 		Session session = DBManager.getSession();
-		List<Purchase> purchases = (List<Purchase>) session.createQuery("from purchases p where p.date = " + date).list();
+		String queryString = "from purchases p where p.date = :date_purchase";
+		Query query = session.createQuery(queryString);
+		query.setParameter("date_purchase", date);
+		List<Purchase> purchases = (List<Purchase>) query.uniqueResult();
 		session.close();
 		return purchases;
 	}

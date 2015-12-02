@@ -2,6 +2,7 @@ package persistence;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class ProductDAOImpl implements ProductDAO {
@@ -36,31 +37,55 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	public Product get(Integer id) {
+		//		Session session = DBManager.getSession();
+		//		Product product = (Product) session.createSQLQuery("SELECT * FROM products where id = " + id).addEntity(Product.class).uniqueResult();
+		//		session.close();		
 		Session session = DBManager.getSession();
-		Product product = (Product) session.createSQLQuery("SELECT * FROM products where id = " + id).addEntity(Product.class).uniqueResult();
-		session.close();
+		String queryString = "from products where id = :id_product";
+		Query query = session.createQuery(queryString);
+		query.setParameter("id_product", id);
+		Product product = (Product) query.uniqueResult();
+		session.close();		
 		return product;
 	}
 
 	public Product get(String name) {
+		//		Session session = DBManager.getSession();
+		//		Product product = (Product) session.createSQLQuery("SELECT * FROM products where name = '" + name + "'").addEntity(Product.class).uniqueResult();
+		//		session.close();
 		Session session = DBManager.getSession();
-		Product product = (Product) session.createSQLQuery("SELECT * FROM products where name = '" + name + "'").addEntity(Product.class).uniqueResult();
+		String queryString = "from products where name = :name_product";
+		Query query = session.createQuery(queryString);
+		query.setParameter("name_product", name);
+		Product product = (Product) query.uniqueResult();
 		session.close();
 		return product;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getProductsWithPriceGreaterThan(Float price) {
+		//		Session session = DBManager.getSession();
+		//		List<Product> products = (List<Product>) session.createSQLQuery("from products p where p.price > " +price).list();
+		//		session.close();
 		Session session = DBManager.getSession();
-		List<Product> products = (List<Product>) session.createSQLQuery("from products p where p.price > " +price).list();
+		String queryString = "from products p where p.price > :price_product";
+		Query query = session.createQuery(queryString);
+		query.setParameter("price_product", price);
+		List<Product> products = (List<Product>) query.list();
 		session.close();
 		return products;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getProductsWithPriceLessThan(Float price) {
+		//		Session session = DBManager.getSession();
+		//		List<Product> products = (List<Product>) session.createSQLQuery("from products p where p.price < " +price).list();
+		//		session.close();
 		Session session = DBManager.getSession();
-		List<Product> products = (List<Product>) session.createSQLQuery("from products p where p.price z " +price).list();
+		String queryString = "from products p where p.price < :price_product";
+		Query query = session.createQuery(queryString);
+		query.setParameter("price_product", price);
+		List<Product> products = (List<Product>) query.list();
 		session.close();
 		return products;
 	}
