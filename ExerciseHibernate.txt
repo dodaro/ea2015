@@ -1,0 +1,18 @@
+Design and implement a database for an online shop using Hibernate.
+Implement an ORM mapping strategy for the following classes:
+
+1. Product: models a product. It stores all information of a product (id, name, description, price, ...).
+2. User: models a user registered in the website. It stores all information of a user (username, password, first name, last name, date of birth, ...).
+3. Purchase: it stores the information of a purchase (id, the user, the product, date, ...).
+
+You can assume that each product is always available.
+
+Moreover, implement a test suite using junit for testing the following features:
+1. Insert/Update/Delete a user.
+2. Insert/Update/Delete a product.
+3. Insert/Delete a purchase.
+4. Get the list of all products in the database.
+5. Get the list of all users in the database.
+6. Get the list of all products bought by a user.
+7. Get all the purchase of a specific date.
+8. Get the date on which they were made the greatest number of purchases.
