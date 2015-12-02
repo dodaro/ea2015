@@ -19,5 +19,7 @@ public interface PurchaseDAO {
 	public List<Purchase> getAllPurchases();
 	
 	public List<Purchase> getPurchaseInDate(Date date);
+	
+	public Date dateMaxPurchases();
 
 }

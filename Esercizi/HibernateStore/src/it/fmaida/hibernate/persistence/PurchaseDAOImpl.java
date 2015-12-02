@@ -68,4 +68,13 @@ public class PurchaseDAOImpl implements PurchaseDAO {
 		return purchases;
 	}
 
+	@Override
+	public Date dateMaxPurchases() {
+		Session session = dbManager.getSession();
+		//LA QUERY NOBILE!
+		Date date = (Date) session.createQuery("SELECT p.purchaseDate FROM Purchase p GROUP BY p.purchaseDate HAVING count(*) >= ALL ( SELECT Count(*) FROM Purchase p GROUP BY p.purchaseDate  )").list().get(0);
+		session.close();
+		return date;
+	}
+
 }

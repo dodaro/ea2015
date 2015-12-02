@@ -2,7 +2,10 @@ package it.fmaida.hibernate.test;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -65,8 +68,22 @@ public class PersistenceTest {
 		itemDAO.createItem(item5);
 		itemDAO.createItem(item6);
 		
-		User user1 = new User(1,"Francesco","Francesco","Francesco","Francesco","password",new Date());
-		User user2 = new User(1,"Aldo","Aldo","Aldo","Aldo","Aldo",new Date());
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+		String yesterdayDateString = "01-12-2015";
+		String todayDateString = "02-12-2015";
+		Date yesterdayDate = null;
+		Date todayDate = null;
+		try {
+			yesterdayDate = sdf.parse(yesterdayDateString);
+			todayDate = sdf.parse(todayDateString);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		User user1 = new User(1,"Francesco","Francesco","Francesco","Francesco","password",new Date(todayDate.getTime()));
+		User user2 = new User(1,"Aldo","Aldo","Aldo","Aldo","Aldo",new Date(yesterdayDate.getTime()));
 		User user3 = new User(1,"Alessandro","Alessandro","Alessandro","Alessandro","Alessandro",new Date());
 		User user4 = new User(1,"Serafino","Serafino","Serafino","Serafino","Serafino",new Date());
 		User user5 = new User(1,"Luigi","Luigi","Luigi","Luigi","Luigi",new Date());
@@ -83,18 +100,22 @@ public class PersistenceTest {
 		Purchase purchase1 = new Purchase(0, user1, null, user1.getBirthDate());
 		Purchase purchase2 = new Purchase(0, user1, null, user1.getBirthDate());
 		
+		Purchase purchase3 = new Purchase(0,user2,null,user2.getBirthDate());
+		
 		//needed in testPurchasesInDate
 		date = user1.getBirthDate();
 		
 		//creating two itemsPurchases per user1
 		ArrayList<ItemPurchase> user1Purchases1 = new ArrayList<>();
 		ArrayList<ItemPurchase> user1Purchases2 = new ArrayList<>();
+		ArrayList<ItemPurchase> user2Purchases1 = new ArrayList<>();
 		
 		//create three items per first purchases
 		ItemPurchase itemPurchase1 = new ItemPurchase(0, purchase1, item1);
 		ItemPurchase itemPurchase2 = new ItemPurchase(0, purchase1, item2);
 		ItemPurchase itemPurchase3 = new ItemPurchase(0, purchase1, item3);
 		ItemPurchase itemPurchase4 = new ItemPurchase(0, purchase2, item3);
+		ItemPurchase itemPurchase5 = new ItemPurchase(0, purchase3, item3);
 
 		//add the items for user 1
 		user1Purchases1.add(itemPurchase1);
@@ -104,16 +125,25 @@ public class PersistenceTest {
 		// add the same item for user 1 in itemPurchase2
 		user1Purchases2.add(itemPurchase3);
 		
+		//add the items for user 2
+		user2Purchases1.add(itemPurchase5);
+		
 		purchase1.setItemPurchases(user1Purchases1);
 		purchase2.setItemPurchases(user1Purchases2);
 		
+		purchase3.setItemPurchases(user2Purchases1);
+		
 		purchaseDAO.create(purchase2);
 		purchaseDAO.create(purchase1);
+		
+		purchaseDAO.create(purchase3);
 				
 		itemPurchaseDAO.create(itemPurchase1);
 		itemPurchaseDAO.create(itemPurchase2);
 		itemPurchaseDAO.create(itemPurchase3);
 		itemPurchaseDAO.create(itemPurchase4);
+		
+		itemPurchaseDAO.create(itemPurchase5);
 		
 		
 		
@@ -157,7 +187,7 @@ public class PersistenceTest {
 	
 	@Test
 	public void numberOfPurchases() {
-		assertEquals(2,purchaseDAO.getAllPurchases().size());
+		assertEquals(3,purchaseDAO.getAllPurchases().size());
 	}
 	
 
@@ -212,6 +242,12 @@ public class PersistenceTest {
 	public void testPurchasesInDate() {
 		int count = purchaseDAO.getPurchaseInDate(date).size();
 		assertEquals(2, count);
+	}
+	
+	@Test
+	public void dayMaxPurchases() {
+		Date d = purchaseDAO.dateMaxPurchases();
+		assertEquals(date, d);
 	}
 	
 	
