@@ -1,0 +1,5 @@
+/bin/
+/target/
+/.settings/
+/database.mv.db
+/database.trace.db
