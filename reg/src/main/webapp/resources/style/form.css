@@ -1,0 +1,118 @@
+input
+{
+	color: #333333;
+	background-color: #EFEFEF;
+	
+}
+
+select
+{
+	color: #333333;
+    background-color: #EFEFEF;
+	border: 1px solid #333333;
+}
+
+label
+{
+	
+	float:left;
+	text-align:left;
+	display: block;
+	font: inherit;
+	  font-weight: bold;
+	
+}
+
+
+#link
+{
+	float:left;
+	
+}
+
+textarea
+{
+	color: #333333;
+    background-color: #EFEFEF;
+	
+}
+
+
+
+
+textarea:focus
+{
+	background-color: #C0C0C0;
+}
+
+
+fieldset {  
+	position: left;
+	margin: 2em 15em 0em 25em;  
+	padding: 0; 
+	border-radius:7px;
+	color:#000000; 
+	background:rgb(255, 255, 255); 
+	background:rgba(255, 255, 255, 0.5); 
+	height:350px;
+	 -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}  
+legend {  
+	margin-left: 2em;  
+	color: #690e63;  
+	 font-size:150%;
+	background:rgb(255, 255, 255); 
+	background:rgba(255, 255, 255, 1.0); 
+	 -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+    border-radius:7px;
+	color:#000000;
+}  
+fieldset ol {  
+	padding: .5em 1em  1em 1em;  
+	list-style: none;  
+}  
+fieldset li {  
+	padding-bottom: .5em;  
+} 
+
+.check
+{
+	height:25px;
+	margin-left:0em;
+	margin-top:-.3em;
+	position:absolute;
+	background:url("../resources/images/form/check.png") no-repeat;
+	padding-left:2em;
+	padding-top:0.5em;
+	color: #c90312;
+	display:none;
+	font-family: 'Brush Script MT', cursive;
+}
+
+#status
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #FFFFFF;
+	background-color: #000000;
+	display:none;
+	padding-left: 5em;
+}
+
+
+@-webkit-keyframes mymove {
+    from {background-color: rgb(255, 255, 255);}
+    to {background-color: rgba(255, 255, 255, 0.5);}
+}
+
+
+@keyframes mymove {
+    from {background-color: rgb(255, 255, 255);}
+    to {background-color: rgba(255, 255, 255, 0.5);}
+}
+

@@ -1,0 +1,132 @@
+
+body {
+  margin: 0;
+}
+
+header {
+	margin: 5px;
+    background-color: white;
+    width: 100%; 
+    /* border: solid blue 1px; */
+}
+#footer{ 
+	background: #861CF0;
+	height: 30px;
+	width: 100%;
+     margin:  auto;
+	font: italic 15 px Georgia, serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.banner {
+	margin: 0 auto;
+	overflow: auto;
+	width: 700px;
+	/* border: solid red 1px; */
+}
+
+.banner img{
+	float: left;
+  	width: 25%;	
+}
+
+.banner div{
+	/* border: solid purple 1px; */
+  	margin: 1px 0 0 26%;	
+  	font-size: 1.9em;
+  	color: black;
+}
+
+.wrapper {
+	position: relative;
+	border: solid purple 1px;
+	width: 100%;
+
+	
+    /* background-color: yellow; */
+}
+
+.front-page {
+	position: absolute;
+	bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    max-height: 700px;
+    min-height: 600px;
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    /* background-color: red; */
+    /* border: solid black 10px; */
+}
+
+
+
+.front-welcome {
+	float: left;
+	/* background-color: teal; */
+	height: 410px;
+	width: 520px;
+}
+
+.front-welcome-text {
+	position: absolute;
+	/* border: 2px solid green; */
+	width: 470px;
+    height: 328px;
+    color: white;
+    font-size: 16px;
+    left: 0;
+    top: 0;
+    margin-top: -10px;
+    line-height: 22px;
+    text-align: left;
+    text-shadow: #000 0 1px 2px;
+    
+}
+.front-information-text {
+	position: absolute;
+	text-align: center;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+table {
+    border-collapse: collapse;
+    width: 57%;
+    margin: 10px 0px 10px 20px;
+}
+
+th {
+ text-align: left;
+}
+
+.button{	
+    margin-left:10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    font: 70% "Trebuchet MS", sans-serif;
+}
+
+#hidden{
+	display: none;
+}
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+---Welcome Page : Which consists of login and registeration
+---Registration Page : Form to fill all the personal information that you can check information that username must be unique
+---Fields to fill : Username, Password, Name, Family, Age, Address, Tax Code
+---after registration the app will ask user that maybe they want to connect their account to this account and the system give you a list and user can chose his service and then user 
+---
