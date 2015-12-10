@@ -1,0 +1,92 @@
+body{	
+	font: 62.5% "Trebuchet MS", sans-serif;
+}
+
+#wrapper{	
+	background: #FFFFFF;
+	margin: 60px auto;
+	width: 900px;
+	height: 984px;
+}
+
+#header{	
+	background: #F0F0F0;
+	height: 200px;
+	width: 900px;
+	background-image: url("../images/unical.png");
+}
+
+#content{
+	background: #d2d0d2;	
+	width: 900px;
+	height: 400px;
+}
+
+#footer{ 
+	background: #838283;
+	height: 20px;
+	width: 900px;
+	text-indent: 10px;
+}
+
+.button{	
+    margin-left:10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    font: 70% "Trebuchet MS", sans-serif;
+}
+
+#result{
+	width: 900px;
+	height: 200px;
+}
+
+.images{
+	height: 200px;
+	width: 250px;
+}
+
+#summaryTable {
+	margin-left: 50px;
+	border-collapse: collapse;
+}
+
+#summaryTable tr {		
+	border: 1px solid white;
+}
+
+#summaryTable th {
+	text-align: center; 
+	padding-top: 5px; 
+	padding-bottom: 4px; 
+	background-color: #0099FF; 
+	color: #ffffff;
+}
+	
+#summaryTable tr:last-child td {
+	color: #000000;
+	background-color: #0099FF;	
+}
+
+#summaryTable tr td:first-child {
+	text-align: right;
+	min-width: 100px;
+}
+
+#summaryTable td.myTd {
+	text-align: left;
+	padding-left: 10px;
+}
+
+#inner {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.error {
+	font: 62.5% "Trebuchet MS", sans-serif;
+	color: red;
+}
