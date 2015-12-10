@@ -1,14 +1,20 @@
 package hibernate.persistence.data;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "users")
@@ -38,6 +44,10 @@ public class User implements Serializable {
 
 	@Column(name = "address", length = 255, nullable = false)
 	private String address;
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private List<Purchase> purchases;
 
 	public User() {
 		this.id = NO_ID;
@@ -104,6 +114,14 @@ public class User implements Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public List<Purchase> getPurchases() {
+		return purchases;
+	}
+	
+	public void setPurchases(List<Purchase> purchases) {
+		this.purchases = purchases;
 	}
 
 	@Override

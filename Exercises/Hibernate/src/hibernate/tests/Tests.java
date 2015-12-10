@@ -60,5 +60,14 @@ public class Tests {
 			System.out.println(purchase);
 		}
 	}
+	
+	@Test
+	public void getUserProducts() {
+		User user = DAOFactory.get().getUserDAO().get(15);
+		
+		for (Purchase p : user.getPurchases()) {
+			p.getProduct();
+		}
+	}
 
 }
