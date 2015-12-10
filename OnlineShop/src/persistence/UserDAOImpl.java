@@ -58,7 +58,7 @@ public class UserDAOImpl implements UserDAO {
 		User us = getUserByUsername(username);
 		if (us != null) {
 			for (Purchase p : us.getPurchases()) {
-				Hibernate.initialize(p);
+				//Hibernate.initialize(p);
 				products.add(p.getProduct());
 			}
 		}

@@ -81,7 +81,7 @@ public class PersistenceTests {
 
 	@Test
 	public void testdeleteANDcreateUser() {
-		User u = new User("usr", "password", "firstName", "lastName", new Date(0));
+		User u = new User("usr2", "password", "firstName", "lastName", new Date(0));
 		userDAO.create(u);
 		assertEquals(new Integer(11), (Integer) userDAO.getUsers().size());
 		userDAO.delete(u);
