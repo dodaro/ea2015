@@ -66,25 +66,25 @@ public class User implements Serializable {
 	public String getUsername() {
 		return username;
 	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public List<Promotion> getPromotions() {
 		return promotions;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setPromotions(List<Promotion> promotions) {
+		this.promotions = promotions;
 	}
-
+	
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public void setPromotions(List<Promotion> promotions) {
-		this.promotions = promotions;
 	}
 
 	public void addPromotion(Promotion p) {
